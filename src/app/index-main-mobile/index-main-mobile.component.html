@@ -1,0 +1,37 @@
+<div class="container-custom-mobile">
+
+  <mat-accordion multi="true" #accordion="matAccordion" class="accordion-body">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="header-mother">
+        <mat-panel-title class="mat-panel-title">
+          <mat-icon>list</mat-icon>
+          <b>DANH MỤC</b></mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-accordion class="mat-table" *ngFor="let item of dataMainList; let i = index">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="header-child">
+            <mat-panel-title><a rel="canonical" href="" (click)="accordion.closeAll()" routerLink="/{{item.link}}"
+                                routerLinkActive="$router_link-active$">
+              <img style="margin-right: 5px;" width="25" height="25" src="{{item.icon}}" alt="{{item.icon}}"
+                   title="{{item.icon}}">
+              {{item.name}}
+            </a></mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <mat-list-item *ngFor="let item1 of dataHeader[i]">
+              <i style="margin-left: 20px; font-size: 90%;" class="fad fa-tags"></i>
+              <a rel="canonical" (click)="accordion.closeAll();" href="" routerLink="/productType/{{item1.link}}"
+                 routerLinkActive="$router_link-active$">{{item1.name}}</a>
+            </mat-list-item>
+          </mat-nav-list>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

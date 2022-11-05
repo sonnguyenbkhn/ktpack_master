@@ -1,0 +1,31 @@
+.content-trang-chu {
+  padding: 5px;
+
+  .content {
+    .title {
+      color: var(--primary-color);
+      height: 50px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      i {
+        font-size: 120%;
+        margin: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .btn-group {
+      margin: 10px 0;
+
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+
+}

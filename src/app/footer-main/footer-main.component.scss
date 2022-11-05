@@ -1,0 +1,256 @@
+@import "responsive.scss";
+.container-fluid {
+  background-image: url('/assets/Storage/Upload/banner/bg-footer.jpg');
+  font-family: 'Helvetica Neue', sans-serif;
+  .row1Footer {
+    .col-left {
+      margin-top: 15px;
+      width: 28%;
+      border-right: 1px solid #9a9a9a;
+
+      h5 {
+        text-transform: uppercase;
+        font-size: 130%;
+        color: #827564;
+      }
+      .productList{
+        margin-top:12px;
+        .titleProductList{
+          text-transform: uppercase;
+          color: white;
+          font-weight: bold;margin-bottom: 5px;
+        }
+        ul{
+          list-style: none;
+          margin-left: 10px;
+          font-size: 80%;
+          li{
+            margin-bottom: 5px;
+            a{
+              text-decoration: none;
+              color: white;
+            }
+          }
+          li:hover{
+            a{
+              color: var(--primary-color);
+              transition: all 0.5s linear;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      ::ng-deep mat-form-field {
+        width: 97%;
+      }
+
+      ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+
+    }
+
+    .col-right {
+      width: 72%;  margin-top: 15px;
+
+      .button-facebook{
+        width: 100%;
+        display: flex;justify-content: flex-start;align-items: center;
+
+        .like_facebook{
+          width: 85px;font-size: 90%;
+          margin-right: 10px;
+          background-color: var(--bs-primary);border:none;border-radius: 3px;
+          display: flex;justify-content: space-around;align-items: center;
+        }
+        .share_facebook{
+          width: 85px;font-size: 90%;
+          display: flex;justify-content: space-around;align-items: center;
+          background-color: var(--bs-primary);border:none;border-radius: 3px;
+        }
+      }
+      .infoCompany{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;justify-content: space-around;
+        .col_infoCompany{
+          display: flex;justify-content: space-around;
+          width: 100%;
+          list-style: none;
+          h5{
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 100%;
+            font-weight: bold;text-transform: uppercase;
+          }
+          .item_col{
+            list-style: none;
+            margin-left: 10px;
+            padding-left: 0!important;
+            li{
+              padding: 3px 0;
+              a{
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 90%;
+                text-decoration: none;
+              }
+              a:hover{
+                color:  var(--primary1-color);
+                font-weight: bold;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding: 0;
+    }
+
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+      padding-right: 0;
+    }
+
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {
+      top: 0px;
+    }
+
+    button {
+      padding: 0 10px;
+      background-color: #827564;
+      color: white;
+    }
+
+    .box-socialList {
+      width: 100%;
+      margin-top: 20px;
+
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+
+        li {
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #827564;
+          margin-right: 10px;
+
+          i {
+            font-size: 110%;
+            color: white;
+          }
+        }
+
+        li:hover {
+          transition: all 0.35s linear;
+
+          i {
+            font-size: 130%;
+            transition: all 0.1s ease-in;
+          }
+        }
+
+        li:nth-child(1):hover {
+          background-color: var(--bs-primary);
+        }
+
+        li:nth-child(2):hover {
+          background-color: #00aced;
+        }
+
+        li:nth-child(3):hover {
+          background-color: var(--bs-danger);
+        }
+
+        li:nth-child(4):hover {
+          background-color: orange;
+        }
+
+        li:nth-child(5):hover {
+          background-color: var(--bs-primary);
+        }
+      }
+    }
+
+  }
+
+  .row2Footer{
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #9a9a9a;
+    ul.info_address{
+      display: flex;justify-content: center;
+      align-items: center;flex-direction:column;
+      list-style: none;
+
+      li:nth-child(1){
+        text-transform: uppercase;
+        font-weight: bold;color: rgba(255, 255, 255, 0.9);
+        font-size: 98%;letter-spacing: 1px;
+      }
+      li{
+        padding: 5px;
+        font-size: 80%; color: rgba(255, 255, 255, 0.9);
+        i{
+          padding:0 20px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+
+  .row3Footer{
+    padding-bottom: 40px;
+    .workingTime{
+      margin-top: 15px;
+      display: flex;flex-direction: column;
+      justify-content: center;align-items: center;
+
+      .line{
+        width: 10%;
+        height: 1px;
+        background-color: #9a9a9a;
+      }
+      .time{
+        display: flex;justify-content: center;
+        align-items: center;flex-direction: column;
+        h4{
+          font-weight: bold;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 95%;letter-spacing: 1px;
+        }
+        p{
+          font-family: 'Helvetica Neue', sans-serif;
+          font-size: 90%;
+          font-weight: bold;  color: rgba(255, 255, 255, 0.9);
+          text-align: center;
+          span{
+            color: var(--bs-danger);
+          }
+
+        }
+      }
+
+    }
+  }
+
+}
+@keyframes animatedBackground {
+  0% {
+    background-position-x:0%;
+  }
+  75% {
+    background-position-x: 100%;
+  }
+  100%{
+    background-position-x: 0%;
+  }
+}
+

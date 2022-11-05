@@ -1,0 +1,133 @@
+<div class="content-form">
+
+  <button class="btnCustomForm1  btnForm" mat-raised-button (click)="addkeyDataProductMainList()">
+    <i class="fal fa-plus-square"></i>
+    <span>Thêm sản phẩm chính</span>
+  </button>
+  <button class="btnCustomForm2  btnForm" mat-raised-button (click)="clearAll()">
+    <i class="fad fa-broom"></i>
+    <span>Clear All</span>
+  </button>
+  <form action="" [formGroup]="formkeyDataProductMain">
+    <div formArrayName="productMainList">
+      <div *ngFor="let item of getproductMainList().controls; let i = index">
+        <div class="content-itemArr" [formGroupName]="i">
+
+          <div class="content-formArr">
+            <label> <span class="colorPrimary">Tên sản phẩm chính: </span>
+              <input type="text" placeholder="name" formControlName="name">
+            </label>
+            <label> <span class="colorPrimary">Link sản phẩm chính: </span>
+              <input type="text" placeholder="link" formControlName="link">
+            </label>
+            <label> <span class="colorPrimary">Link icon: </span>
+              <input type="text" placeholder="icon" formControlName="icon">
+            </label>
+            <button class="btn btn-outline-primary btnEx" (click)="insertkeyDataProductMain(i)">
+              <i class="fal fa-sort-up"></i>
+              <span>Chèn trên {{i}}</span>
+            </button>
+            <button class="btn btn-outline-danger btnEx" (click)="deletekeyDataProductMainList(i)">
+              <i class="fal fa-trash-alt"></i>
+              <span>Xóa {{i}}</span>
+            </button>
+          </div>
+
+          <button class="btn btn-primary btnEx" (click)="showHidden(i)">
+            <i class="fad fa-caret-circle-down"></i>
+            <span>Hiển thị thêm</span>
+          </button>
+          <button class="btn btn-danger btnEx" (click)="hideHidden(i)">
+            <i class="fad fa-caret-circle-up"></i>
+            <span>Ẩn nội dung</span>
+          </button>
+
+          <div *ngIf="this.hiddenArr[i]">
+
+            <button class="btn btn-success btnExMeta" (click)="addkeyDataProductMainListMetaName(i)">
+              <i class="fal fa-plus-square"></i>
+              <span>Thêm name meta</span>
+            </button>
+            <div formArrayName="productMainListMetaName">
+              <div *ngFor="let item of getproductMainListMetaName(i).controls; let j = index">
+                <div [formGroupName]="j">
+
+                  <div class="content-formArr">
+                    <label> <span>Meta name: </span>
+                      <input type="text" formControlName="name" placeholder="name">
+                    </label>
+                    <label><span>Meta content: </span>
+                      <input type="text" formControlName="content" placeholder="content">
+                    </label>
+                    <button class="btn btn-danger btnEx" (click)="deletekeyDataProductMainListMetaName(i, j)">
+                      <i class="fal fa-trash-alt"></i>
+                      <span>Xóa mete name {{i}}.{{j}}</span>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <button class="btn btn-success btnExMeta" (click)="addkeyDataProductMainListMetaProperty(i)">
+              <i class="fal fa-plus-square"></i>
+              <span>Thêm property meta</span>
+            </button>
+            <div formArrayName="productMainListMetaProperty">
+              <div *ngFor="let item of getproductMainListMetaProperty(i).controls; let k = index">
+                <div [formGroupName]="k">
+                  <div class="content-formArr">
+                    <label> <span>meta property: </span>
+                      <input type="text" formControlName="property" placeholder="property">
+                    </label>
+                    <label><span>meta content: </span>
+                      <input type="text" formControlName="content" placeholder="content">
+                    </label>
+                    <button class="btn btn-danger btnEx"
+                            (click)="deletekeyDataProductMainListMetaProperty(i, k)">
+                      <i class="fal fa-trash-alt"></i>
+                      <span>Xóa mete property {{i}}.{{k}}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-success btnExMeta" (click)="addkeyDataProductMainListMetaGoogle(i)">
+              <i class="fal fa-plus-square"></i>
+              <span>Thêm meta google</span>
+            </button>
+            <div formArrayName="productMainListMetaGoogle">
+              <div *ngFor="let item of getproductMainListMetaGoogle(i).controls; let m = index">
+                <div [formGroupName]="m">
+                  <div class="content-formArr">
+                    <label> <span>meta itemprop: </span>
+                      <input type="text" formControlName="itemprop" placeholder="itemprop">
+                    </label>
+                    <label><span>meta content: </span>
+                      <input type="text" formControlName="content" placeholder="content">
+                    </label>
+                    <button class="btn btn-danger btnEx" (click)="deletekeyDataProductMainListMetaGoogle(i, m)">
+                      <i class="fal fa-trash-alt"></i>
+                      <span>Xóa mete google {{i}}.{{m}}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <button [disabled]="this.formkeyDataProductMain.invalid" mat-raised-button class="btnCustomForm1 btnExMeta"
+          (click)="submitproductMainList()">
+    <i class="fad fa-paper-plane"></i>
+    <span>Áp dụng</span>
+  </button>
+</div>

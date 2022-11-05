@@ -1,0 +1,41 @@
+<div class="content-product-main">
+  <div class="btn-group leftFlex">
+    <button class="btnCustomForm1" mat-raised-button (click)="openFormProductMain()">
+      <i class="fad fa-folder-open"></i>
+      <span>Mở danh sách sản phẩm chính</span>
+    </button>
+    <button class="btnCustomForm2" mat-raised-button (click)="editDataProductMain(this.dataProductMain)">
+      <i class="fad fa-edit"></i>
+      <span>Chỉnh sửa danh sách sản phẩm chính</span>
+    </button>
+  </div>
+
+  <div class="content">
+     <table>
+       <tr>
+         <th>Tên</th>
+         <th>Link</th>
+       </tr>
+       <tr *ngFor="let item of dataProductMainList">
+         <td>{{item.name}}</td>
+         <td>{{item.link}}</td>
+       </tr>
+     </table>
+
+
+<!--    <div *ngFor="let items of this.dataProductMainList">-->
+<!--      {{items.link}}-->
+<!--      {{items.name}}-->
+<!--      <div *ngFor="let item of items.productMainListMetaGoogle">-->
+<!--        {{item.itemprop}}-->
+<!--        {{item.content}}-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--     {{this.dataProductMainListJson[0].link}}-->
+<!--    </div>-->
+
+  </div>
+</div>
+

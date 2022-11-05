@@ -1,0 +1,30 @@
+.btnExForm{
+  margin: 15px 10px 15px 0;
+  padding: 5px;
+  font-family: hevatica-regular, sans-serif;
+  i{
+    font-size: 150%;
+    margin-right: 5px;
+  }
+  span{
+    font-size: 120%;
+  }
+}
+
+.mr-10px{
+  margin-right: 10px;
+}
+.my-10px{
+  margin: 10px 0;
+}
+.content-formArr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  label{
+    span{
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

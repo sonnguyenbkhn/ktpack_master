@@ -1,0 +1,32 @@
+.container-fluid{
+  font-family: hevatica-regular, sans-serif;
+  color: var(--text-color-black);
+  .tintuc{
+    border:1px solid rgba(128, 128, 128, 0.3);
+    .title{
+      height: 45px;
+      background-color: #f9f9f9;
+      width: 100%;
+      font-weight: bold;
+      font-size: 100%;
+      padding-left: 10px;
+      text-transform: uppercase;
+    }
+    .content-button{
+      padding: 5px;
+      button{
+        margin-right: 10px;
+      }
+    }
+    .content-text{
+      padding: 0 10px;
+      ul{
+
+        li{
+
+        }
+      }
+    }
+  }
+}
+

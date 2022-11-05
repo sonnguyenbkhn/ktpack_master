@@ -1,0 +1,124 @@
+<div class="content-trangchu">
+  <a href="" routerLinkActive="$routerLinkActive" routerLink="/trang-chu">Trang chủ >> Thanh toán</a>
+</div>
+<div class="content-cart">
+  <div class="content-cart__main">
+      <div class="page-view">
+        <h1>GIỎ HÀNG CỦA BẠN</h1>
+        <div class="alert-notification"> <i class="fa fa-cart-arrow-down"></i> >> <span>&nbsp; Giỏ hàng của bạn đã được cập nhật!</span></div>
+        <div class="content-table">
+          <table>
+
+            <thead>
+            <tr>
+              <td class="">STT</td>
+              <td class="">Ảnh</td>
+              <td class="">Tên sản phẩm</td>
+              <td class="">Mã sản phẩm</td>
+              <td class="">Đơn giá</td>
+              <td class="" style="width: 100px">Số lượng</td>
+              <td class="">Thành tiền</td>
+              <td class="">Xóa</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of this.dataService.newArrIdNew2; let i = index">
+              <td>{{i + 1}}</td>
+              <td routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}"><img src="{{item.img[0].link}}" alt="{{item.img[0].name}}"></td>
+              <td routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}">{{item.productDetails.name}}</td>
+              <td>{{item.idItem}}</td>
+              <td>{{item.price}}</td>
+              <td>
+                <div class="count">
+                  <button (click)="this.dataService.tang(i)"><i class="fal fa-plus"></i></button>
+                  <span>{{(item.count)}}</span>
+                  <button [disabled]="item.count<=1" (click)="this.dataService.giam(i)"><i
+                    class="far fa-minus"></i></button>
+                </div>
+              </td>
+              <td>{{item.price}}* {{item.count}}</td>
+              <td (click)="dataService.deleteDataCart(i)"><i class="fa fa-trash-alt"></i></td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+            <tr>
+              <td colspan="8">
+                <div class="float-right">
+                  <strong class="price">Liên hệ (VND)</strong>
+                </div>
+                <div class="float-right ta-right" style="padding-right: 10px; font-weight: bold;">
+                  Số tiền cần thanh toán:
+                </div>
+              </td>
+            </tr>
+            </tfoot>
+
+          </table>
+        </div>
+
+        <div class="btn-router">
+          <button routerLink="/trang-chu" routerLinkActive="$routerLinkActive" mat-raised-button class="btnCustomForm"><i class="fas fa-arrow-to-left"></i><span> Mua thêm sản phẩm</span></button>
+        </div>
+      </div>
+
+    <div class="form-info">
+      <h1><span>NHẬP THÔNG TIN NGƯỜI MUA</span></h1>
+      <div class="form-info__main">
+        <mat-dialog-content class="mat-typography">
+          <div class="formInfoSale">
+            <form [formGroup]="profileForm">
+              <mat-form-field appearance="outline">
+                <mat-label>Họ và tên * </mat-label>
+                <input matInput id="fullName" type="text" formControlName="fullName" placeholder="Nguyễn Văn A">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Số điện thoại * </mat-label>
+                <input matInput id="phoneNumber" type="text" formControlName="phoneNumber" placeholder="0393483309">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Email của bạn * </mat-label>
+                <input matInput id="yourEmail" type="text" formControlName="yourEmail" placeholder="example@gmail.com">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Tỉnh/Thành phố * </mat-label>
+                <mat-select   [(ngModel)]="tinh" (ngModelChange)="getDataQuanHuyen()" formControlName="addressTinh" placeholder="Hà Nội" required>
+                  <mat-option  *ngFor = "let item of tinhArr1" value="{{item}}">{{item}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Quận/Huyện * </mat-label>
+                <mat-select  [(ngModel)]="huyen" (ngModelChange)="getDataQuanXa()"  id="addressHuyen" formControlName="addressHuyen" placeholder="Đống Đa">
+                  <mat-option *ngFor="let item of tinhArrQuan1" value="{{item}}">{{item}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Xã/Phường * </mat-label>
+                <mat-select [(ngModel)]="xa" id="addressXa" formControlName="addressXa" placeholder="Khương Thượng">
+                  <mat-option *ngFor="let item of tinhArrXa1" value="{{item}}">{{item}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Địa chỉ * </mat-label>
+                <input matInput id="addressDetails" type="text" formControlName="addressDetails" placeholder="Ví dụ: Số 20, ngõ 90">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Ghi chú đơn hàng (tuỳ chọn) </mat-label>
+                <textarea rows="9" matInput id="note" type="text" formControlName="note"
+                          placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."
+                ></textarea>
+              </mat-form-field>
+              <!--      <div>{{tinh|json}}</div>-->
+            </form>
+          </div>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button [disabled]="profileForm.invalid" class="selled" mat-button (click)="onSubmit();">Đặt hàng</button>
+        </mat-dialog-actions>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-main></app-footer-main>
+<!--[disabled]="profileForm.invalid"-->

@@ -1,0 +1,32 @@
+.content-product-main{
+  padding: 10px;
+  border: 1px solid black;
+
+  .btn-group{
+    button{
+      margin-left: 10px;
+    }
+  }
+  table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  th{
+    background-color: var(--primary-color);
+  }
+
+  tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+}
+
+
+
+

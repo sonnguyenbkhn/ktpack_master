@@ -1,0 +1,183 @@
+.content-product-main{
+  padding: 10px;
+  background-color: var(--bg-gray);
+  .general{
+    .content-title{
+      height: 50px;align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      i{
+        font-size: 150%;
+        margin:0px 10px;
+        color: var(--primary-color);
+      }
+      span{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+    }
+
+  }
+}
+
+.mr-t10{
+  margin: 10px 10px 10px 0;
+}
+.data_table{
+  border-collapse: collapse;
+  border:1px solid var(--bg-gray);
+  width: 100%;border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;  overflow: hidden;
+  tr{
+    td, th{
+      padding: 5px;
+      border:1px solid var(--bg-gray);
+      text-align: center;
+    }
+    td:first-child, th:first-child{
+      width: 50px;
+    }
+    td:nth-child(2), th:nth-child(2){
+      width: 200px;
+    }
+    td:nth-child(3), th:nth-child(3){
+      width: 200px;
+    }
+    td:last-child, th:last-child{
+      width: 100px;
+    }
+    td.imgArr{
+      img{
+        margin: 0 5px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+    }
+
+  }
+}
+.btnIconSinger{
+  margin-right: 10px;
+  i{
+    font-size:  120%;
+    padding: 5px 0;
+  }
+}
+
+.displayPage{
+  ::ng-deep mat-form-field{
+    width: 60px!important;
+  }
+}
+.search{
+  ::ng-deep button.mat-focus-indicator.mat-icon-button.mat-button-base{
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    margin:0!important;
+  }
+  ::ng-deep mat-icon{
+    color: gray;
+  }
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}
+.toolbox{
+  display: flex;justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  .toolbox__child{
+    display: flex;justify-content: flex-start;
+    align-items: center;
+    ::ng-deep mat-form-field{
+      margin-right: 10px;
+    }
+    .sortABC, .sortStar, .showAll, .sortDiscount{
+      font-family: hevatica-regular, sans-serif;
+      font-weight: 100;  font-size: 85%;
+      background-image: linear-gradient(to bottom, #2b5876, #4e4376);
+      margin-right: 10px;
+      i{
+        margin-right: 5px;color: whitesmoke;
+      }
+      span{
+        color: whitesmoke;
+      }
+    }
+  }
+}
+::ng-deep pagination-controls{
+  ul{
+    padding-top:10px;
+    padding-bottom: 20px;
+  }
+  li{
+    margin: 0 5px;
+  }
+  .ngx-pagination .disabled{
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+  }
+  .pagination-next.ng-star-inserted{
+
+  }
+  .ngx-pagination .current{
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .ngx-pagination a{
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}
+.fix-content{
+  width: 100%;
+  height: 100%; font-family: hevatica-regular, sans-serif;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top:0;left: 0;
+  .text-notication{
+    color: var(--bs-danger);
+    font-weight: bold;
+    font-size: 100%;
+  }
+  .box-question{
+    width: 400px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 150px;border-radius: 5px;
+    position: absolute;
+    background-color: white;
+    top: 50%;left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;justify-content: center;
+    flex-direction: column;align-items: center;
+    .btnMulti{
+      display: flex;justify-content: space-around;
+      align-items: center;width: 100%;
+      margin-top: 30px;
+      button{
+        display: flex;justify-content: space-around;
+        align-items: center;
+        padding: 0px 10px;
+        i{
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+
+}

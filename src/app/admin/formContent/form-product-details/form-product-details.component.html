@@ -1,0 +1,286 @@
+<div class="content-form">
+  <button class="btn btn-outline-warning" (click)="clearAll()">clear all</button>
+  <form action="" [formGroup]="formDataProductDetails">
+
+    <div class="select-group">
+      <div>
+        <p>Chọn link sản phẩm chính</p>
+        <select formControlName="productMain" class="form-select form-select-lg mb-3"
+                aria-label="Default select example">
+          <option [ngValue]="item.link" *ngFor="let item of dataProductMain">{{item.link}}</option>
+        </select>
+      </div>
+      <div>
+        <p>Chọn link sản phẩm chính nhánh</p>
+        <select formControlName="productMainBrand" class="form-select form-select-lg mb-3"
+                aria-label="Default select example">
+          <option [ngValue]="item.link" *ngFor="let item of dataProductMainBrand">{{item.link}}</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <div formGroupName="productDetails">
+      <div class="content-formArr1">
+        <div class="form-group">
+          <label><p>Tên sản phảm chi tiết: </p>
+            <input style="font-size: 14px" class="form-control input-lg" type="text" formControlName="name">
+          </label>
+        </div>
+        <div class="form-group">
+          <label><p>Link sản phảm chi tiết: </p>
+            <input style="font-size: 14px" class="form-control" type="text" formControlName="link">
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 10px; background-color: rgba(245,245,245,0.3);">
+      <div class="leftFlex contentTag">
+        <i class="fad fa-tags"></i><p>Thẻ meta tag</p>
+      </div>
+      <button class="btn btn-primary btnEx" (click)="showHidden('meta')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('meta')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+      <div class="metaTag-group" *ngIf="isHiddenMeta">
+
+        <div class="productMetaNameArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaName()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm name meta</span>
+          </button>
+          <div formArrayName="productMetaName" *ngFor="let item of getProductMetaName().controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="content-formArr">
+
+                <label> <span>Meta name: </span>
+                  <input type="text" formControlName="name" placeholder="name">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaName(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete name</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productMetaGoogleArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaGoogle()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm google meta</span>
+          </button>
+          <div formArrayName="productMetaGoogle" *ngFor="let item of getProductMetaGoogle().controls; let i = index">
+            <div [formGroupName]="i">
+
+              <div class="content-formArr">
+                <label> <span>Meta itemprop: </span>
+                  <input type="text" formControlName="itemprop" placeholder="itemprop">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaGoogle(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete itemprop</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productMetaPropertyArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaProperty()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm property meta</span>
+          </button>
+          <div formArrayName="productMetaProperty"
+               *ngFor="let item of getProductMetaProperty().controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="content-formArr">
+
+                <label> <span>Meta property: </span>
+                  <input type="text" formControlName="property" placeholder="property">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaProperty(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete property</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="content-img" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;padding: 10px;margin-top: 15px;background-color: rgba(245,245,245,0.3);">
+      <div class="leftFlex contentTag">
+        <i class="fad fa-tags"></i><p>Ảnh sản phẩm</p>
+      </div>
+
+      <button class="btn btn-primary btnEx" (click)="showHidden('img')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('img')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+      <div class="imgArr"  *ngIf="this.isHiddenImg">
+        <button class="btn btn-outline-warning btnEx mr-t10" (click)="addDataProductDetailsImg()">
+          <i class="fal fa-plus-square"></i>
+          <span>Thêm ảnh</span>
+        </button>
+        <div formArrayName="img" *ngFor="let item of getImg().controls; let i = index">
+          <div [formGroupName]="i">
+            <div class="content-formImgArr">
+              <div class="form-group">
+                <label> <span>Tên ảnh: </span>
+                  <input class="form-control" placeholder="tên ảnh" formControlName="name">
+                </label>
+              </div>
+              <div class="form-group">
+                <label><span>Link ảnh: </span>
+                  <input class="form-control" placeholder="link ảnh" formControlName="link">
+                </label>
+              </div>
+              <button class="btn btn-outline-primary btnEx" (click)="insertDataProductDetailsImg(i)">
+                <i class="fal fa-sort-up"></i>
+                <span>Chèn trên {{i}}</span>
+              </button>
+              <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsImg(i)">
+                <i class="fal fa-trash-alt"></i>
+                <span>Xóa</span>
+              </button>
+<!--              <button (click)="checkImgExist(i)">check</button>-->
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content-description"  style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;padding: 10px;margin-top: 15px;background-color: rgba(245,245,245,0.3);">
+      <div class="leftFlex contentTag">
+        <i class="fad fa-tags"></i><p>Mô tả sản phẩm</p>
+      </div>
+      <button class="btn btn-primary btnEx" (click)="showHidden('description')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('description')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+      <div class="contentItem description" *ngIf="this.isHiddenDescription">
+        <div formGroupName="description">
+            <angular-editor [config]="editorConfig" placeholder="mô tả" formControlName="mota"></angular-editor>
+            <angular-editor [config]="editorConfig" placeholder="thông số" formControlName="thongso"></angular-editor>
+          </div>
+        </div>
+      </div>
+
+    <div class="content-comment" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;padding: 10px;margin-top: 15px;background-color: rgba(245,245,245,0.3);">
+      <div class="leftFlex contentTag">
+        <i class="fad fa-tags"></i><p>Bình luận sản phẩm</p>
+      </div>
+
+      <button class="btn btn-primary btnEx" (click)="showHidden('comment')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('comment')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+      <div class="commentArr"  *ngIf="this.isHiddenComment">
+        <button class="btn btn-outline-warning btnEx mr-t10" (click)="addDataProductDetailsComment()">
+          <i class="fal fa-plus-square"></i>
+          <span>Thêm bình luận</span>
+        </button>
+        <button class="btn btn-outline-warning btnEx mr-t10" (click)="clearAll()">
+          <i class="fal fa-plus-square"></i>
+          <span>Clear All</span>
+        </button>
+        <div formArrayName="comment" *ngFor="let item of getComment().controls; let i = index">
+          <div [formGroupName]="i">
+            <div class="content-formImgArr">
+              <div class="form-group">
+                <label> <span>Tên người bl: </span>
+                  <input style="font-size: 110%;" class="form-control" placeholder="Tên người bình luận" formControlName="name">
+                </label>
+              </div>
+              <div class="form-group">
+                <label><span>Nội dung bl: </span>
+                  <input style="font-size: 110%;" class="form-control" placeholder="Nội dung bình luận" formControlName="content">
+                </label>
+              </div>
+              <div class="form-group">
+                <label><span>Thời gian bl: </span>
+                  <input style="font-size: 110%;" type="date" class="form-control" placeholder="Thời gian bình luận" formControlName="time">
+                </label>
+              </div>
+              <div class="form-group">
+                <label><span>Sao bl: </span>
+                  <input style="font-size: 110%;" type="number" class="form-control" placeholder="Sao bình luận <= 5" formControlName="star">
+                </label>
+              </div>
+<!--              <button class="btn btn-outline-primary btnEx" (click)="insertDataProductDetailsImg(i)">-->
+<!--                <i class="fal fa-sort-up"></i>-->
+<!--                <span>Chèn trên {{i}}</span>-->
+<!--              </button>-->
+              <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsComment(i)">
+                <i class="fal fa-trash-alt"></i>
+                <span>Xóa</span>
+              </button>
+              <!--              <button (click)="checkImgExist(i)">check</button>-->
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </form>
+
+  <button class="btnCustomForm2 mr-t10" mat-raised-button  [disabled]="formDataProductDetails.invalid" (click)=" onSubmit(); "
+          *ngIf="!isEdit">
+    <i class="fad fa-paper-plane"></i>
+    <span>submit</span>
+  </button>
+  <button class="btnCustomForm2 mr-t10" mat-raised-button (click)=" saveRowData();" *ngIf="isEdit">
+    <i class="fad fa-save"></i>
+    <span>Save</span>
+  </button>
+
+</div>
+
+
+<!--<ul>-->
+<!--  <li *ngFor="let item of dataProductMain">{{item.link}}</li>-->
+<!--</ul>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let item of dataProductMainBrand">{{item.link}}</li>-->
+<!--</ul>-->

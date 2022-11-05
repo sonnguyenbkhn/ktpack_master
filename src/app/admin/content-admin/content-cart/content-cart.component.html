@@ -1,0 +1,87 @@
+<div class="container1">
+  <div class="content">
+    <div class="title leftFlex">
+      <i class="fad fa-question-circle"></i>
+      <span>Đơn hàng</span>
+    </div>
+    <div class="toolbox">
+      <div class="toolbox__child">
+        <div class="displayPage">
+          <mat-form-field appearance="outline">
+            <mat-label>Hiển thị</mat-label>
+            <mat-select [(ngModel)]="chooseItemOfPage">
+              <mat-option *ngFor="let num of itemOfPageArr" [value]="num">
+                {{num}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="search">
+          <mat-form-field appearance="outline">
+            <mat-label>Tìm kiếm số điện thoại</mat-label>
+            <label>
+              <input  matInput [(ngModel)]="keySearch" (ngModelChange)="keySearch=$event">
+            </label>
+            <button   (click)="searchKeyword(this.keySearch)" matSuffix mat-icon-button color="primary">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Tìm kiếm mã đơn hàng</mat-label>
+            <label>
+              <input  matInput [(ngModel)]="keySearchCode" (ngModelChange)="keySearchCode=$event">
+            </label>
+            <button   (click)="searchKeywordCode(this.keySearchCode)" matSuffix mat-icon-button color="primary">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <button (click)="showAll()" class="showAll" mat-raised-button><i class="fad fa-globe-americas"></i><span>Hiển thị tất cả</span></button>
+      </div>
+    </div>
+    <table class="data_table">
+      <thead>
+      <tr>
+        <th  scope="col">Mã đơn hàng</th>
+        <th  scope="col">Ảnh sản phẩm</th>
+        <th  scope="col">Tên sản phẩm</th>
+        <th  scope="col">Số lượng</th>
+        <th  scope="col">Người mua</th>
+        <th  scope="col">Số điện thoại</th>
+        <th  scope="col">Thời gian</th>
+        <th  scope="col">Chi tiết</th>
+<!--        <th  scope="col">Xóa</th>-->
+      </tr>
+      </thead>
+      <tbody  *ngFor="let item1 of dataSearchKeyword | paginate: {itemsPerPage: this.chooseItemOfPage, currentPage: page} ;let i = index">
+        <tr *ngFor="let item of item1| slice: 0: this.item1.length - 1 ;let j = index">
+          <td>{{item1[this.item1.length -1]}}</td>
+          <td routerLink="/{{item1[j].productMain}}/{{item1[j].productMainBrand}}/{{item1[j].productDetails.link}}"><img style="width: 50px; height: 50px;" src="{{item1[j].img[0].link}}" alt=""></td>
+          <td routerLink="/{{item1[j].productMain}}/{{item1[j].productMainBrand}}/{{item1[j].productDetails.link}}">{{item1[j].productDetails.name}}</td>
+          <td>{{item1[j].count}}</td>
+          <td>{{item1[j].infoCustomer.fullName}}</td>
+          <td>{{item1[j].infoCustomer.phoneNumber}}</td>
+          <td>{{item1[j].timeCart}}</td>
+          <td (click)="detailsCart(item1[j], item1[this.item1.length -1])">Chi tiết</td>
+<!--          <td (click)="deleteItemCart(item1[this.item1.length -1])">Xóa</td>-->
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" class="text-center" (pageChange)="page = $event"></pagination-controls>
+
+  </div>
+</div>
+
+
+
+
+<!--<ul>-->
+<!--  <li *ngFor="let item of dataAllCart; let i = index">-->
+<!--    {{item[this.item.length -1]}}-->
+<!--    <ul *ngFor="let item1 of item | slice: 0: this.item.length - 1; let j = index">-->
+<!--      <li>{{item[j].address}}</li>-->
+<!--      <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--    </ul>-->
+<!--  </li>-->
+<!--</ul>-->
+

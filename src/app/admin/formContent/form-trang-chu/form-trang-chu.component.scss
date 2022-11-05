@@ -1,0 +1,68 @@
+.form-trangchu{
+  .contentTag{
+    padding-bottom: 10px ;
+    p{
+      color: var(--info);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    i{
+      color: var(--info);
+    }
+  }
+  .borderBox{
+    border: 1px solid var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  .betweenFlex{
+    display: flex;justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px;
+    .itemDiv{
+      width: 30%;
+      span{
+        font-weight: bold;
+        margin-left: 5px;
+        color: var(--primary-color);
+      }
+      input{
+        margin-left: 5px;
+        font-size: 14px;
+      }
+    }
+
+  }
+}
+
+.btnExForm{
+  margin: 15px 10px 15px 0;
+  padding: 5px;
+  font-family: hevatica-regular, sans-serif;
+  i{
+    font-size: 150%;
+    margin-right: 5px;
+  }
+  span{
+    font-size: 120%;
+  }
+}
+
+.mr-10px{
+  margin-right: 10px;
+}
+.my-10px{
+  margin: 10px 0;
+}
+.content-formArr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  label{
+    span{
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

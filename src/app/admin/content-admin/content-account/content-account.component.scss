@@ -1,0 +1,29 @@
+p {
+  margin-bottom: 0px;
+}
+
+.container-fluid {
+  font-family: hevatica-regular, sans-serif;
+
+  .title {
+    width: 100%;
+    height: 45px;
+    background-color: var(--bg-gray);
+    padding-left: 10px;
+
+    i {
+      font-size: 120%;
+      padding-right: 10px;
+    }
+
+    span {
+      font-size: 110%;
+      font-weight: bold;
+      color: var(--text-color-black);
+      text-transform: uppercase;
+    }
+  }
+}
+.btnCustomForm{
+  margin: 10px 5px;
+}

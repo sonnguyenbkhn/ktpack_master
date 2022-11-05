@@ -1,0 +1,119 @@
+<div class="form-content">
+  <form action="" [formGroup]="formGioithieu">
+    <div class="leftFlex contentTag">
+      <i class="fad fa-tags"></i><p>Thẻ meta tag</p>
+    </div>
+    <div class="my-10px">
+      <button class="btn btn-primary btnEx mr-10px" (click)="showHidden('meta')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('meta')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+    </div>
+    <div class="metaTag-group" *ngIf="isHiddenMeta">
+      <button class="btn btn-outline-warning btnEx mr-t10" (click)="clearAll()">
+        <i class="fal fa-plus-square"></i>
+        <span>Clear All</span>
+      </button>
+
+      <div class="productMetaNameArr">
+        <button class="btn btn-success btnExMeta my-10px" (click)="addDataProductDetailsMetaName()">
+          <i class="fal fa-plus-square"></i>
+          <span>Thêm name meta</span>
+        </button>
+        <div formArrayName="productMetaName" *ngFor="let item of getProductMetaName().controls; let i = index">
+          <div [formGroupName]="i">
+            <div class="content-formArr">
+
+              <label> <span>Meta name: </span>
+                <input type="text" formControlName="name" placeholder="name">
+              </label>
+              <label><span>Meta content: </span>
+                <input type="text" formControlName="content" placeholder="content">
+              </label>
+              <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaName(i)">
+                <i class="fal fa-trash-alt"></i>
+                <span>Xóa mete name</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="productMetaGoogleArr">
+        <button class="btn btn-success btnExMeta my-10px" (click)="addDataProductDetailsMetaGoogle()">
+          <i class="fal fa-plus-square"></i>
+          <span>Thêm google meta</span>
+        </button>
+        <div formArrayName="productMetaGoogle" *ngFor="let item of getProductMetaGoogle().controls; let i = index">
+          <div [formGroupName]="i">
+
+            <div class="content-formArr">
+              <label> <span>Meta itemprop: </span>
+                <input type="text" formControlName="itemprop" placeholder="itemprop">
+              </label>
+              <label><span>Meta content: </span>
+                <input type="text" formControlName="content" placeholder="content">
+              </label>
+              <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaGoogle(i)">
+                <i class="fal fa-trash-alt"></i>
+                <span>Xóa mete itemprop</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="productMetaPropertyArr">
+        <button class="btn btn-success btnExMeta my-10px" (click)="addDataProductDetailsMetaProperty()">
+          <i class="fal fa-plus-square"></i>
+          <span>Thêm property meta</span>
+        </button>
+        <div formArrayName="productMetaProperty"
+             *ngFor="let item of getProductMetaProperty().controls; let i = index">
+          <div [formGroupName]="i">
+            <div class="content-formArr">
+
+              <label> <span>Meta property: </span>
+                <input type="text" formControlName="property" placeholder="property">
+              </label>
+              <label><span>Meta content: </span>
+                <input type="text" formControlName="content" placeholder="content">
+              </label>
+              <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaProperty(i)">
+                <i class="fal fa-trash-alt"></i>
+                <span>Xóa mete property</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <span class="text-warning">** Nội dung giới thiệu</span>
+    <angular-editor formControlName="contentGioithieu1" [config]="config"></angular-editor>
+    <span class="text-warning">** Ảnh sản phẩm</span>
+    <angular-editor formControlName="imgLink" [config]="config"></angular-editor>
+    <span class="text-warning">** Cam kết với khách hàng</span>
+    <angular-editor formControlName="commitCompany" [config]="config"></angular-editor>
+    <span class="text-warning">** Nội dung cuối</span>
+    <angular-editor formControlName="adviseCompany" [config]="config"></angular-editor>
+  </form>
+</div>
+
+
+<div class="btnGroup">
+  <button class="btn btn-outline-warning btnExForm" *ngIf="!isEdit" (click)="onSubmit()" [disabled]="this.formGioithieu.invalid">
+    <i class="fad fa-paper-plane"></i>
+    <span>submit</span>
+  </button>
+  <button class="btn btn-outline-primary btnExForm" *ngIf="isEdit" (click)="saveRowData()">
+    <i class="fad fa-save"></i>
+    <span>Save</span>
+  </button>
+</div>
+

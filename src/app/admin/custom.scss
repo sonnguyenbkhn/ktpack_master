@@ -1,0 +1,27 @@
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--primary-color)!important;
+  // opacity: 1!important;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #fac612!important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 9px;
+}
+.btnEx{
+  margin-right: 20px;
+   i{
+     margin-right: 5px;
+   }
+}
+.btnExMeta{
+  margin: 10px 0px;
+  i{
+    margin-right: 5px;
+  }
+}
+.colorPrimary{
+  color: var(--primary-color) !important;
+}

@@ -1,0 +1,28 @@
+<div class="content-product-main-brand">
+  <div class="btn-group">
+    <button class="btnCustomForm1" mat-raised-button (click)="openFormProductMainBrand()">
+      <i class="fad fa-folder-open"></i>
+      <span>Mở danh sách sản phẩm chính nhánh</span>
+    </button>
+    <button class="btnCustomForm2" mat-raised-button (click)="editDataProductMainBrand(this.dataProductMainBrand)">
+      <i class="fad fa-edit"></i>
+      <span>Chỉnh sửa danh sách sản phẩm chính nhánh</span>
+    </button>
+  </div>
+
+  <div class="content">
+    <table>
+      <tr>
+        <th>Tên</th>
+        <th>Link</th>
+      </tr>
+      <tr *ngFor="let item of dataProductMainBrandList">
+        <td>{{item.name}}</td>
+        <td>{{item.link}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+

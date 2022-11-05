@@ -1,0 +1,158 @@
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="logo" routerLink="/trang-chu">
+      <img src="{{dataInfoFB.imgLogo}}" alt="{{dataInfoFB.tonchi}}" title="{{dataInfoFB.tonchi}}">
+    </div>
+    <div class="search-bar">
+      <mat-form-field appearance="outline">
+        <mat-label>Nhập từ khóa tìm kiếm</mat-label>
+        <input  (keyup.enter)="getValueInput()" [(ngModel)]="valueInput" matInput placeholder="Nhập vào đây ...">
+        <button (click)="this.getValueInput()" mat-icon-button matSuffix>
+          <mat-icon>search</mat-icon>
+        </button>
+
+      </mat-form-field>
+    </div>
+    <div class="box-icon">
+      <ul class="screenPc">
+        <li>
+          <div class="icon-contact">
+            <a style="color: var(--main-color3); text-decoration: none" href="tel:{{dataInfoFB.hotline}}">
+              <i class="fad fa-phone-square"></i>
+              <div class="icon-contact__content">
+                <p>Gọi mua hàng</p>
+                <p>{{dataInfoFB.hotline}}</p>
+              </div>
+            </a>
+
+          </div>
+        </li>
+        <li  routerLink="/tin-tuc" routerLinkActive="$routerLinkActive">
+          <div class="icon-contact">
+            <i class="fad fa-calendar-day"></i>
+            <div class="icon-contact__content">
+              <p>Tin tức &</p>
+              <p>Sự kiện</p>
+            </div>
+          </div>
+        </li>
+        <li routerLink="/cart">
+          <div class="icon-contact" >
+            <i matBadge="{{this.dataServicesService.newArrIdNew2.length}}" matBadgeSize="small" matBadgeColor="accent"
+               class="fa fa-shopping-cart mr-2"></i>
+            <div class="icon-contact__content">
+              <p>Giỏ hàng</p>
+              <p style="font-size: 60%;">( Liên hệ )</p>
+            </div>
+          </div>
+        </li>
+        <li (click)="login()">
+          <div class="icon-contact" >
+            <i class="fad fa-user-shield"></i>
+            <div  class="icon-contact__content">
+              <p>Đăng nhập</p>
+              <p>Quản trị viên</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <button (click)="openContentList()" style="display: none; border:none;background: none;" class="screenMobile"><i
+        class="fal fa-bars"></i></button>
+      <div style="display: none" id="screenMobile__content" class="screenMobile__content">
+        <ul>
+          <li>
+            <a href="tel:{{dataInfoFB.hotline}}">
+              <i class="fad fa-phone-square"></i> <span>Gọi mua hàng</span>
+            </a>
+          </li>
+          <li routerLink="/tin-tuc" routerLinkActive="$routerLinkActive">
+              <i class="fad fa-calendar-day"></i> <span>Tin tức & Sự kiện</span>
+          </li>
+          <li routerLink="/cart" routerLinkActive="$routerLinkActive">
+              <i  routerLink="/cart" routerLinkActive="$routerLinkActive" matBadge="{{this.dataServicesService.newArrIdNew2.length}}" matBadgeSize="small" matBadgeColor="accent"
+                 class="fa fa-shopping-cart mr-2"></i> <span>Giỏ hàng</span>
+          </li>
+          <li>
+            <a href="" (click)="login()">
+              <i (click)="login()" class="fad fa-user-shield"></i><span>Quản trị viên</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none" class="container-custom-mobile">
+    <mat-accordion multi="true" #accordion="matAccordion" class="accordion-body">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="header-mother">
+          <mat-panel-title class="mat-panel-title">
+            <mat-icon>list</mat-icon>
+            <b>DANH MỤC</b></mat-panel-title>
+          <mat-panel-description></mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-accordion class="mat-table" *ngFor="let item of dataMainList; let i = index">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header class="header-child">
+              <mat-panel-title><a rel="canonical" href="" (click)="accordion.closeAll()" routerLink="/{{item.link}}"
+                                  routerLinkActive="$router_link-active$">
+                <img style="margin-right: 5px;" width="25" height="25" src="{{item.icon}}" alt="{{item.icon}}"
+                     title="{{item.icon}}">
+                {{item.name}}
+              </a></mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+              <mat-list-item *ngFor="let item1 of dataHeader[i]">
+                <i style="margin-left: 20px; font-size: 90%;" class="fad fa-tags"></i>
+                <a rel="canonical" (click)="accordion.closeAll();" href="" routerLink="/{{item.link}}/{{item1.link}}"
+                   routerLinkActive="$router_link-active$">{{item1.name}}</a>
+              </mat-list-item>
+            </mat-nav-list>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+
+  <div  *ngIf="this.routingUrlTrangchu()" class="menu-cat">
+    <div class="main-btn-parent">
+      <div class="main-button">
+        <span>Danh mục sản phẩm </span>
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="box-list">
+        <ul class="box-list__parent">
+          <li (click)="clickUnhover()" class="list-parent-for" *ngFor="let item of dataMainList; let i = index">
+            <a routerLink="/{{item.link}}">
+              <img src="{{item.icon}}" alt="{{item.icon}}" title="{{item.icon}}">
+              {{item.name}}
+            </a><i style="margin-left: 5px; color: #666666; font-size: 120%;" class="fas fa-caret-right"></i>
+            <ul  style="display: none" class="list-child">
+              <li *ngFor="let item1 of dataHeader[i]">
+                <i class="fad fa-circle"></i>
+                <a routerLink="/{{item.link}}/{{item1.link}}">{{item1.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-text">
+      <p>Đặt hàng dễ dàng<span style="padding: 0px 15px;color:#BDBDBD">|</span>Giao hàng nhanh chóng<span style="padding: 0px 15px;color:#BDBDBD">|</span>Tư vấn nhiệt tình</p>
+    </div>
+    <div style="display: none" class="box-text-marquee">
+      <marquee  width="100%" behavior="scroll" >
+        <p>Đặt hàng dễ dàng<span style="padding: 0px 15px;color:#BDBDBD">|</span>Giao hàng nhanh chóng<span style="padding: 0px 15px;color:#BDBDBD">|</span>Tư vấn nhiệt tình</p>
+      </marquee>
+    </div>
+
+
+  </div>
+
+
+</div>

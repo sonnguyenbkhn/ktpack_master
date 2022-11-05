@@ -1,0 +1,97 @@
+//@import "responsive.scss";
+
+.content-mother-gt{
+  font-family: hevatica-regular,sans-serif;
+  overflow-x: hidden;
+  background-color: var(--bg-gray);
+  width: 100% !important;
+  .content-child-gt{
+    width: calc(100% - 100px);
+    margin: 20px 50px!important;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px 5px 10px 5px;
+    .content-about{
+      h2.intro{
+        font-family: foro, sans-serif;
+        font-weight: bold;
+        font-size: 180%;
+        color: var(--bs-warning);
+        margin-top: 10px;
+        i{
+          font-size: 70%;
+          margin-right: 10px;
+        }
+      }
+      h3.nameCompany{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 130%;
+        color: #333;text-transform: uppercase;
+      }
+      span.nameTrust{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 120%;
+        font-style: italic;
+        color: var(--bs-danger);
+        display: block;
+      }
+      span.nameIntro{
+        font-family: 'Pacifico', cursive;
+        font-weight: bold;
+        font-size: 150%;color: #333;
+        display: block;
+      }
+      p{
+        text-indent: 20px;
+        font-family: hevatica-regular, sans-serif;
+        font-size: 110%;font-style: italic;
+        line-height: 25px;
+      }
+
+      ul.title_commit{
+        font-family: 'Open Sans', sans-serif;
+        color: #ffd700;
+        text-transform: uppercase;
+        font-weight: bold;
+        p{
+          text-decoration: underline;
+          font-weight: bold;
+          font-style: italic;
+          margin-top: 10px;
+          font-size: 120%;color: var(--bs-warning);
+          margin-bottom: 10px;text-indent: 0px;
+        }
+        li{
+          color: #333;
+          font-weight: bold;
+          u.title-details{
+            padding: 10px 0px;display: block;
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            font-weight: 600;
+          }
+          div{
+            text-transform: none;
+            font-weight: normal; font-family: 'Open Sans', sans-serif;
+          }
+        }
+      }
+
+      .content-img{
+        width: 100%;
+        display: flex;justify-content: center;
+        padding:10px 0 20px 0;
+        img{
+          width: auto;
+        }
+      }
+      .address{
+        font-family: hevatica-regular, sans-serif;
+      }
+
+    }
+  }
+}
+//font-family: 'Pacifico', cursive;

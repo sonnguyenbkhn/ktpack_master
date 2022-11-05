@@ -1,0 +1,60 @@
+@media only screen and (min-width: 1140px) {
+
+}
+
+@media only screen and(max-width: 1139px) and (min-width: 960px) {
+
+}
+
+@media only screen and(max-width: 959px) and (min-width: 720px) {
+
+
+}
+
+@media only screen and(max-width: 719px) and (min-width: 540px) {
+  .row1Footer{
+    .col-left{
+      width: 100% !important;
+    }
+    .col-right{
+      width: 100% !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .row1Footer{
+    .col-left{
+      width: 100% !important;
+    }
+    .col-right{
+      width: 100% !important;
+      .infoCompany{
+        display: flex;
+        .col_infoCompany{
+          width: 100% !important;
+          flex-wrap: wrap;
+          padding-left: 0!important;
+          ul{
+            padding-left: 0!important;
+          }
+          li{
+            width: 100% !important;display: flex;flex-direction: column;
+            align-items: center;
+            padding-top:10px;
+            .item_col{
+              margin-left: 0px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .row2Footer{
+    .info_address{
+      li{
+        text-align: center  ;
+      }
+    }
+  }
+}

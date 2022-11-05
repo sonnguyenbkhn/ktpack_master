@@ -1,0 +1,28 @@
+
+<div class="container1">
+  <div class="content">
+    <div class="title leftFlex">
+      <i class="fad fa-question-circle"></i>
+      <span>Giới thiệu công ty</span>
+    </div>
+
+    <div class="btn-group">
+      <button mat-raised-button class="btnCustomForm1" (click)="openFormGioithieu()">
+        <i class="fad fa-folder-open"></i>
+        <span>Mở form</span>
+      </button>
+      <button mat-raised-button class="btnCustomForm2" (click)="updateFormGioithieu(this.dataFormGioithieuFB)">
+        <i class="fa fa-edit"></i>
+        <span>Chỉnh sửa form</span>
+      </button>
+    </div>
+
+    <div class="content-text">
+      <div [innerHTML]="dataFormGioithieuFB.contentGioithieu1"></div>
+      <div class="commitCompany" [innerHTML]="dataFormGioithieuFB.commitCompany"></div>
+      <div class="centerFlex" style= "margin: 20px 0px" [innerHTML]="dataFormGioithieuFB.imgLink"> </div>
+      <div [innerHTML]="dataFormGioithieuFB.adviseCompany"></div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,579 @@
+@media only screen and (min-width: 1140px) {
+
+}
+@media only screen and(max-width: 1139px) and (min-width: 960px) {
+  .content-item{
+    .content-item__left{
+
+    }
+    .content-text{
+      width: calc(100% - 386px - 0px) !important;
+    }
+    .boxs{
+      display: none!important;
+    }
+  }
+  .box-info{
+    .tab-content{
+      ::ng-deep mat-tab-group{
+        .description-content{
+
+        }
+        .table-thongso{
+          ::ng-deep tr{
+            ::ng-deep  td{
+              width: 45%;padding: 5px!important;
+              margin-right: calc(5%/2);
+            }
+          }
+        }
+        .content-rating{
+          .ProductRating{
+            .commentwrap{
+              span{
+                font-size: 20px!important;
+              }
+            }
+            .danh-gia-sao{
+              .cot-11{
+                width: 25% !important;
+              }
+              .cot-2{
+                width: 75% !important;
+                padding: 10px!important;
+              }
+            }
+          }
+          .formDanhgia{
+
+          }
+        }
+        .list-items{
+
+        }
+      }
+    }
+  }
+}
+@media only screen and(max-width: 959px) and (min-width: 720px) {
+  .content-title{
+    .content-product-item__title{
+      .title-left{
+        h2{
+          font-size: 80% !important;
+          line-height: 19px!important;
+        }
+      }
+      .title-right{
+        a{
+          font-size: 90% !important;
+        }
+      }
+    }
+  }
+  .container-product-details{
+    font-size: 85% !important;
+    .content-product-details{
+      width: calc(100% - 20px) !important;
+      margin:0 10px!important;
+
+      .content-item{
+        .content-item__left{
+
+        }
+        .content-text{
+          width: calc(100% - 386px - 0px) !important;
+          padding-bottom: 15px !important;
+        }
+        .boxs{
+          display: none!important;
+        }
+      }
+
+    }
+  }
+
+  .box-info{
+    .tab-content{
+      ::ng-deep mat-tab-group{
+        .description-content{
+          font-size: 85% !important;
+          ::ng-deep span, p, b{
+            font-size: 85% !important;
+          }
+        }
+        .table-thongso{
+          ::ng-deep tr{
+            ::ng-deep  td{
+              width: 45%;padding: 5px!important;
+              margin-right: calc(5%/2);
+            }
+          }
+        }
+        .content-rating{
+          .ProductRating{
+            .commentwrap{
+              span{
+                font-size: 20px!important;
+              }
+            }
+            .danh-gia-sao{
+              .cot-11{
+                width: 25% !important;
+              }
+              .cot-2{
+                width: 75% !important;
+                padding: 10px!important;
+              }
+            }
+          }
+          .formDanhgia{
+
+          }
+        }
+        .list-items{
+
+        }
+      }
+    }
+  }
+}
+@media only screen and(max-width: 719px) and (min-width: 540px) {
+  .content-title{
+    .content-product-item__title{
+      .title-left{
+        h2{
+          font-size: 80% !important;
+          line-height: 19px!important;
+        }
+      }
+      .title-right{
+        a{
+          font-size: 90% !important;
+        }
+      }
+    }
+  }
+  .container-product-details{
+    font-size: 85% !important;
+    .content-product-details{
+      width: calc(100% - 20px) !important;
+      margin:0 10px!important;
+
+      .content-item{
+        .content-item__left{
+          width: 250px!important;
+          .product-images{
+            height: 250px!important;
+            .tagDiscount{
+              width: 45px!important;
+              height: 80px!important;
+            }
+          }
+        }
+        .content-text{
+          width: calc(100% - 250px - 0px) !important;
+          padding-bottom: 15px !important;
+          .caption_info{
+            p{
+              margin: 0 0 7px !important;
+            }
+          }
+          .socials-share{
+            margin-top: 10px!important;
+          }
+        }
+        .boxs{
+          display: none!important;
+        }
+      }
+
+      .box-info{
+        flex-wrap: wrap;
+        .tab-content{
+          width: 100%!important;
+          ::ng-deep mat-tab-group{
+            .description-content{
+              font-size: 85% !important;
+              ::ng-deep span, p, b{
+                font-size: 85% !important;
+              }
+            }
+            .table-thongso{
+              ::ng-deep tr{
+                ::ng-deep  td{
+                  width: 45%;padding: 5px!important;
+                  margin-right: calc(5%/2);
+                }
+              }
+            }
+            .content-rating{
+              .ProductRating{
+                .commentwrap{
+                  span{
+                    font-size: 20px!important;
+                  }
+                }
+                .danh-gia-sao{
+                  .cot-11{
+                    width: 25% !important;
+                  }
+                  .cot-2{
+                    width: 75% !important;
+                    padding: 10px!important;
+                  }
+                }
+              }
+              .formDanhgia{
+
+              }
+            }
+            .list-items{
+
+            }
+          }
+        }
+        .widget-product{
+          width: 100% !important;
+          .widget-content{
+            ul{
+              li{
+                border: 1px solid rgba(128, 128, 128, 0.6) !important;
+                margin: 2px!important;border-radius: 5px!important;
+              }
+            }
+          }
+        }
+      }
+
+      .more-product{
+        .content-product-item__list{
+          .list_total_product{
+            ul{
+              li{
+                width: 200px!important;
+                .form-cell{
+                  .custom-img{
+                    .img-main{
+                      width: 120px!important;
+                      height: 120px!important;
+                    }
+                  }
+                  .contentTotal{
+                    .contentProduct{
+                      margin-top: 0px!important;
+                      height: 4rem!important;
+                    }
+                    .priceProduct{
+                      margin-top: 5px!important;
+                      margin-bottom: 0px!important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+@media only screen and(max-width: 539px) and (min-width: 414px) {
+  .content-title{
+    .content-product-item__title{
+      .title-left{
+        h2{
+          font-size: 80% !important;
+          line-height: 19px!important;
+        }
+      }
+      .title-right{
+        a{
+          font-size: 90% !important;
+        }
+      }
+    }
+  }
+  .container-product-details{
+    font-size: 85% !important;
+    .content-product-details{
+      width: calc(100% - 20px) !important;
+      margin:0 10px!important;
+
+      .content-item{
+        flex-wrap: wrap;
+        .content-item__left{
+          width: 100%!important;
+          .product-images{
+            height: 350px!important;
+            .tagDiscount{
+              width: 45px!important;
+              height: 80px!important;
+            }
+          }
+          .content-img__slider{
+            height: auto!important;
+          }
+        }
+        .content-text{
+          width: calc(100% - 0px) !important;
+          padding-bottom: 15px !important;
+          .caption_info{
+            p{
+              margin: 0 0 7px !important;
+            }
+            .addCart{
+              width: 95% !important;
+            }
+          }
+          .socials-share{
+            margin-top: 10px!important;
+          }
+        }
+        .boxs{
+          display: none!important;
+        }
+      }
+
+      .box-info{
+        flex-wrap: wrap;
+        .tab-content{
+          width: 100%!important;
+          ::ng-deep mat-tab-group{
+            .description-content{
+              font-size: 85% !important;
+              ::ng-deep span, p, b{
+                font-size: 85% !important;
+              }
+            }
+            .table-thongso{
+              ::ng-deep tr{
+                ::ng-deep  td{
+                  width: 45%;padding: 5px!important;
+                  margin-right: calc(5%/2);
+                }
+              }
+            }
+            .content-rating{
+              font-size: 80% !important;
+              .ProductRating{
+                .commentwrap{
+                  span{
+                    font-size: 16px!important;
+                  }
+                }
+                .danh-gia-sao{
+                  .cot-11{
+                    width: 25% !important;
+                  }
+                  .cot-2{
+                    width: 75% !important;
+                    padding: 10px!important;
+                  }
+                }
+              }
+              .formDanhgia{
+
+              }
+            }
+            .list-items{
+
+            }
+          }
+        }
+        .widget-product{
+          width: 100% !important;
+          .widget-content{
+            ul{
+              li{
+                width: 170px!important;
+                border: 1px solid rgba(128, 128, 128, 0.6) !important;
+                margin: 10px !important;border-radius: 5px!important;
+              }
+            }
+          }
+        }
+      }
+
+      .more-product{
+        .content-product-item__list{
+          .list_total_product{
+            ul{
+              li{
+                width: 170px!important;
+                .form-cell{
+                  .custom-img{
+                    .img-main{
+                      width: 120px!important;
+                      height: 120px!important;
+                    }
+                  }
+                  .contentTotal{
+                    .contentProduct{
+                      margin-top: 0px!important;
+                      height: 4rem!important;
+                    }
+                    .priceProduct{
+                      margin-top: 5px!important;
+                      margin-bottom: 0px!important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 413px) {
+  .content-title{
+    .content-product-item__title{
+      .title-left{
+        h2{
+          font-size: 80% !important;
+          line-height: 19px!important;
+        }
+      }
+      .title-right{
+        a{
+          font-size: 90% !important;
+        }
+      }
+    }
+  }
+  .container-product-details{
+    font-size: 85% !important;
+    .content-product-details{
+      width: calc(100% - 20px) !important;
+      margin:0 10px!important;
+
+      .content-item{
+        flex-wrap: wrap;
+        .content-item__left{
+          width: 100%!important;
+          .product-images{
+            height: 350px!important;
+            .tagDiscount{
+              width: 45px!important;
+              height: 80px!important;
+            }
+          }
+          .content-img__slider{
+            height: auto!important;
+          }
+        }
+        .content-text{
+          width: calc(100% - 0px) !important;
+          padding-bottom: 15px !important;
+          .caption_info{
+            p{
+              margin: 0 0 7px !important;
+            }
+            .addCart{
+              width: 95% !important;
+            }
+          }
+          .socials-share{
+            margin-top: 10px!important;
+          }
+        }
+        .boxs{
+          display: none!important;
+        }
+      }
+
+      .box-info{
+        flex-wrap: wrap;
+        .tab-content{
+          width: 100%!important;
+          ::ng-deep mat-tab-group{
+            .description-content{
+              font-size: 85% !important;
+              ::ng-deep span, p, b{
+                font-size: 85% !important;
+              }
+            }
+            .table-thongso{
+              ::ng-deep tr{
+                ::ng-deep  td{
+                  width: 45%;padding: 5px!important;
+                  margin-right: calc(5%/2);
+                }
+              }
+            }
+            .content-rating{
+              font-size: 80% !important;
+              .ProductRating{
+                .commentwrap{
+                  span{
+                    font-size: 16px!important;
+                  }
+                }
+                .danh-gia-sao{
+                  .cot-11{
+                    width: 25% !important;
+                  }
+                  .cot-2{
+                    width: 75% !important;
+                    padding: 10px!important;
+                  }
+                }
+              }
+              .formDanhgia{
+
+              }
+            }
+            .list-items{
+
+            }
+          }
+        }
+        .widget-product{
+          width: 100% !important;
+          .widget-content{
+            ul{
+              li{
+                width: 160px!important;
+                border: 1px solid rgba(128, 128, 128, 0.6) !important;
+                margin: 5px!important;border-radius: 5px!important;
+              }
+            }
+          }
+        }
+      }
+
+      .more-product{
+        .content-product-item__list{
+          .list_total_product{
+            ul{
+              li{
+                width: 160px!important;
+                .form-cell{
+                  .custom-img{
+                    .img-main{
+                      width: 120px!important;
+                      height: 120px!important;
+                    }
+                  }
+                  .contentTotal{
+                    .contentProduct{
+                      margin-top: 0px!important;
+                      height: 4rem!important;
+                    }
+                    .priceProduct{
+                      margin-top: 5px!important;
+                      margin-bottom: 0px!important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

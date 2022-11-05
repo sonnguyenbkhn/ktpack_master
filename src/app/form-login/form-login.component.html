@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <p class="login-text">Đăng nhập</p>
+    <p class="text-for-admin">(Chỉ dành cho Quản trị viên)</p>
+    <div class="img-contain">
+      <img src="{{iconImg}}"  alt="icon-company">
+    </div>
+
+    <form [formGroup]="accountAdmin" >
+      <mat-form-field appearance="legacy">
+        <mat-label>Tên đăng nhập</mat-label>
+        <input type="text" matInput placeholder="Tên đăng nhập" formControlName="username" >
+        <mat-icon matPrefix>person_outline</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Mật khẩu</mat-label>
+        <input [type]="hide ? 'password' : 'text'" matInput placeholder="Mật khẩu" formControlName="password">
+        <mat-icon matPrefix>key</mat-icon>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+
+    <div class="btnGroup">
+      <button mat-raised-button class="cancelBtn" (click)="cancel()"><i class="fal fa-times"></i><span>Hủy bỏ</span></button>
+      <button mat-raised-button class="loginBtn" [disabled]="accountAdmin.invalid" (click)="login()"><i class="fal fa-sign-in-alt"></i><span>Đăng nhập</span></button>
+    </div>
+</div>

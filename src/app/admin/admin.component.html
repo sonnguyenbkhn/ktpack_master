@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="col-left">
+      <i class="fas fa-th-large"></i>
+      <span>Quản trị viên</span>
+    </div>
+    <div class="col-right">
+      <ul class="leftFlex">
+        <li>
+          <i class="fal fa-share"></i>
+          <a href="" routerLink="/trang-chu">Vào trang web</a>
+        </li>
+        <li>
+          <i class="fal fa-id-card-alt"></i>
+          <a href="">Liên hệ</a>
+        </li>
+        <li>
+          <i class="fal fa-cart-plus"></i>
+          <a href="">Đơn hàng</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row2">
+    <div class="col-left list-header">
+      <div class="list-header__title">
+        <i class="far fa-home"></i>
+        <span>Trang chủ Admin</span>
+      </div>
+      <div class="list-header__content">
+<!--        <div class="list-header__content&#45;&#45;item account">-->
+<!--          <button (click)="activeHiddenBtn('account')" id="account  "><i class="fad fa-user-shield"></i><span>Tài khoản</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item trang-chu">-->
+<!--          <button (click)="activeHiddenBtn('trangchu')" id="trangchu  "><i class="fad fa-layer-minus"></i><span>Trang chủ</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item social">-->
+<!--          <button (click)="activeHiddenBtn('social')" id="social  "><i class="fad fa-share-alt"></i><span>Mạng xã hội</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item tieu-de-main">-->
+<!--          <button (click)="activeHiddenBtn('tieudeMain')" id="tieudeMain"><i class="fad fa-key"></i><span>Tiêu đề</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item tin-tuc">-->
+<!--          <button (click)="activeHiddenBtn('tintuc')" id="tintuc"><i class="fad fa-newspaper"></i><span>Tin tức</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item lien-he">-->
+<!--          <button (click)="activeHiddenBtn('lienhe')"><i class="fad fa-id-card-alt"></i><span>Liên hệ</span></button>-->
+<!--        </div>-->
+<!--        <div class="list-header__content&#45;&#45;item gioi-thieu">-->
+<!--          <button (click)="activeHiddenBtn('gioithieu')"><i class="fas fa-blanket"></i><span>Giới thiệu</span></button>-->
+<!--        </div>-->
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('account')"><i class="fad fa-box-open"></i><span>Tài khoản</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('trangchu')"><i class="fad fa-box-open"></i><span>Trang chủ</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('gioithieu')"><i class="fad fa-box-open"></i><span>Giới thiệu</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('tintuc')"><i class="fad fa-box-open"></i><span>Tin tức chính</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('tintuc_details')"><i class="fad fa-box-open"></i><span>Tin tức chi tiết</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('lienhe')"><i class="fad fa-box-open"></i><span>Liên hệ</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('info-company')"><i class="fad fa-box-open"></i><span>Thông tin công ty</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('product-main')"><i class="fad fa-box-open"></i><span>Sản phẩm chính</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('product-main-brand')"><i class="fad fa-chimney"></i><span>Sản phẩm chính nhánh</span></button>
+        </div>
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('product-details')"><i class="fad fa-wallet"></i><span>Sản phẩm chi tiết</span></button>
+        </div>
+
+        <div class="list-header__content--item">
+          <button (click)="activeHiddenBtn('cart')"><i class="fad fa-badge"></i><span>Đơn hàng</span></button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-right list-content">
+      <app-content-admin></app-content-admin>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

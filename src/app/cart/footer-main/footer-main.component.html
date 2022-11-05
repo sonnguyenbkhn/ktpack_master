@@ -1,0 +1,71 @@
+<div class="container-fluid ">
+    <div class="row row1Footer">
+      <div class="col-left">
+       <h5 title="Đăng kí nhận tin" class="header_col_footer">Đăng kí nhận tin</h5>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Nhập email của bạn !">
+          <button mat-raised-button matSuffix>Đăng kí</button>
+        </mat-form-field>
+        <div class="box-socialList">
+         <ul>
+             <li title="facebook"><a rel="canonical" href=""><i class="fab fa-facebook-f" alt="facebook" title="facebook"></i></a></li>
+             <li title="twitter"><a rel="canonical" href=""><i class="fab fa-twitter" title="twitter"></i></a></li>
+             <li title="youtube"><a  rel="canonical" href=""><i class="fab fa-youtube"></i></a></li>
+             <li title="google"><a rel="canonical" href=""><i class="fab fa-google"></i></a></li>
+             <li title="zalo"><a rel="canonical" href=""><i class="fas fa-comment-alt"></i></a></li>
+           </ul>
+        </div>
+        <div class="productList">
+          <h4 class="titleProductList">Sản phẩm</h4>
+          <ul>
+            <li *ngFor="let item of dataMainList"><a rel="canonical" href="" routerLink="/{{item.link}}"
+                                                                        routerLinkActive="$router_link-active$">{{item.name}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-right">
+         <div class="button-facebook">
+           <button (click)="raiseClick()" class="like_facebook"><i class="fa fa-thumbs-up"></i>Thích<span>{{click}}</span></button>
+           <button class="share_facebook">Chia sẻ <i class="fa fa-share"></i></button>
+         </div>
+        <div class="banner-product">
+   <!--       <img src="./assets/Storage/Upload/banner/Thung-nhua-danpla.jpg" alt="">-->
+        </div>
+        <div class="infoCompany">
+          <ul class="col_infoCompany">
+            <li *ngFor="let item of dataService.infoCompanyList">
+              <h5>{{item.mother.name}}</h5>
+              <ul class="item_col">
+                <li *ngFor="let item1 of item.child"><a rel="canonical" href="" routerLink=""
+                                                        routerLinkActive="$router_link-active$">{{item1.name}}</a>
+                  <img src="{{item1.link}}" alt=""></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+     <div class="row row2Footer">
+       <ul class="info_address">
+         <li>TP.HƯNG YÊN</li>
+         <li><i class="fal fa-home-lg"></i>Văn phòng: {{infoCompany.address}}</li>
+         <li><i class="fal fa-industry-alt"></i>Nhà máy: {{infoCompany.address}}</li>
+         <li><i class="far fa-warehouse"></i>Kho hàng: {{infoCompany.address}}</li>
+         <li><i class="fal fa-phone-rotary"></i>Điện thoại: {{infoCompany.phoneNumber1}} || {{infoCompany.phoneNumber2}}</li>
+         <li><i class="fal fa-envelope"></i>Email: {{infoCompany.email}}</li>
+       </ul>
+     </div>
+     <div class="row row3Footer">
+       <div class="workingTime">
+           <div class="line"></div>
+           <div class="time">
+             <h4>thời gian làm việc</h4>
+             <p>Sáng từ: <span>{{dataService.timeWork[0]}}</span> * Chiều từ: <span>{{dataService.timeWork[1]}}</span></p>
+             <p>{{dataService.copyRight}}</p>
+           </div>
+       </div>
+     </div>
+     <div class="row row4Footer">
+       <div class="phoneFix"></div>
+     </div>
+   </div>

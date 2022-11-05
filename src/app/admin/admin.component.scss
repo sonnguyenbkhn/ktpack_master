@@ -1,0 +1,92 @@
+a{
+  text-decoration: none;
+}
+.row{
+  margin: 0!important;
+  padding: 0!important;
+}
+.container-fluid{
+  font-family: hevatica-regular, sans-serif;
+  .row1{
+    height: 60px; color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    .col-left{
+      padding: 0!important;
+      display: flex;justify-content: flex-start;
+      align-items: center;
+      width: 20%;color: var(--text-color-white);
+      i{
+        font-size: 180%;
+        margin: 0 10px;
+      }
+      span{
+        font-size: 160%;
+      }
+    }
+    .col-right{
+      width: calc(100% - 20%);  padding: 0!important;
+      ul{
+        list-style: none;
+        height: 100%;
+        li{
+          height: inherit;
+          padding: 0 20px;
+          display: flex;justify-content: center;
+          align-items: center;
+          border-left: 1px solid white;
+          i{
+            margin: 0 5px;
+          }
+          a{
+            color: var(--text-color-white);
+          }
+        }
+      }
+    }
+  }
+  .row2{
+    .col-left.list-header{
+      width: 20%;padding: 0!important;
+      border: 1px solid gray;
+      .list-header__title{
+        height: 45px;
+        background-color: #f9f9f9;
+        display: flex;justify-content: flex-start;
+        align-items: center;
+        padding-left: 10px;
+        i{
+          font-size: 120%;
+          margin-right: 5px;
+        }
+        span{
+          font-size: 100%;
+        }
+      }
+      .list-header__content{
+        width: 100%;
+        .list-header__content--item{
+          width: inherit;
+          height: 45px;border-top:1px solid rgba(128, 128, 128, 0.3);
+          background-color: #f9f9f9;
+          button{
+            width: 100%;
+            height: inherit;
+            border: none;
+            background:none;display: flex;justify-content: flex-start;
+            align-items: center;
+            padding: 0 0 0 10px;
+            span{
+              margin-left: 10px;
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+    .col-right{
+      width: calc(100% - 20%);
+      padding:0;
+    }
+  }
+}

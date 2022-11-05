@@ -1,0 +1,57 @@
+<div class="form-content">
+  <form action="" [formGroup]="formInfoCompany">
+    <div class="betweenFlex">
+      <span>Tên công ty: </span>
+      <input type="text" placeholder="Tên công ty" class="form-control" formControlName="nameCompany">
+    </div>
+    <div class="betweenFlex">
+      <span>Ảnh logo công ty: </span>
+      <input type="text" placeholder="Ảnh logo công ty" class="form-control" formControlName="imgLogo">
+    </div>
+    <div class="betweenFlex">
+      <span>Tôn chỉ công ty: </span>
+      <input type="text" placeholder="Tôn chỉ công ty" class="form-control" formControlName="tonchi">
+    </div>
+    <div class="betweenFlex">
+      <span>Số điện thoại 1: </span>
+      <input type="text" placeholder="số điện thoại 1" class="form-control" formControlName="phoneNumber1">
+    </div>
+    <div class="betweenFlex">
+      <span>Số điện thoại 2: </span>
+      <input type="text" placeholder="số điện thoại 2" class="form-control" formControlName="phoneNumber2">
+    </div>
+    <div class="betweenFlex">
+      <span>Hotline: </span>
+      <input type="text" placeholder="hotline" class="form-control" formControlName="hotline">
+    </div>
+    <div class="betweenFlex">
+      <span>Email: </span>
+      <input type="email" placeholder="email" class="form-control" formControlName="email">
+    </div>
+    <div class="betweenFlex">
+      <span>Địa chỉ: </span>
+      <input type="text" placeholder="địa chỉ" class="form-control" formControlName="address">
+    </div>
+    <div class="betweenFlex">
+      <span>Website</span>
+      <input type="text"  placeholder="website" class="form-control" formControlName="website">
+    </div>
+    <div class="betweenFlex">
+      <span>Website</span>
+      <input type="text"  placeholder="map" class="form-control" formControlName="map">
+    </div>
+  </form>
+</div>
+
+<div class="btnGroup">
+  <button class="btn btn-outline-warning btnExForm" *ngIf="!isEdit" (click)="onSubmit()" [disabled]="this.formInfoCompany.invalid">
+    <i class="fad fa-paper-plane"></i>
+    <span>submit</span>
+  </button>
+  <button class="btn btn-outline-primary btnExForm" *ngIf="isEdit" (click)="saveRowData()">
+    <i class="fad fa-save"></i>
+    <span>Save</span>
+  </button>
+</div>
+
+

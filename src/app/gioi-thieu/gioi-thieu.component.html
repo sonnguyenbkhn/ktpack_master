@@ -1,0 +1,18 @@
+<div class="content-mother-gt">
+  <div class="content-child-gt">
+    <div class="content-about" *ngIf="dataGioiThieu">
+      <h2 class="intro"><i class="fad fa-map-signs"></i>Giới thiệu</h2>
+      <span class="nameIntro" [innerHTML]="dataGioiThieu.contentGioithieu1"></span><br>
+      <p [innerHtml]="dataGioiThieu.commitCompany"></p>
+      <div class="content-img">
+       <p [innerHtml]="dataGioiThieu.imgLink"></p>
+      </div>
+
+      <div class="address">
+        <div [innerHtml]="dataGioiThieu.adviseCompany"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer-main-child></app-footer-main-child>

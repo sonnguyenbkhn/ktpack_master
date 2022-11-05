@@ -1,0 +1,29 @@
+@import "../../../admin/custom.scss";
+
+.content-form{
+  font-family: hevatica-regular, sans-serif;
+  .btnForm{
+    margin: 10px 10px 10px 0;
+    padding: 3px 5px;
+  }
+  .content-itemArr{
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-gray);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .content-formArr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label{
+      span{
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}
+
+

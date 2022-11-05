@@ -1,0 +1,116 @@
+<div class="content-product-main">
+  <div class="btn-group leftFlex">
+    <button class="btnCustomForm3" mat-raised-button (click)="openFormProductDetails()">
+      <i class="fad fa-folder-open"></i>
+      <span>Tạo mới sản phẩm chính</span>
+    </button>
+    <!--    <button class="btnCustomForm2" mat-raised-button (click)="editDataProductDetails()">-->
+    <!--      <i class="fad fa-edit"></i>-->
+    <!--      <span>Chỉnh sửa danh sách sản phẩm chính</span>-->
+    <!--    </button>-->
+  </div>
+
+  <div class="btn-group leftFlex" style="width: 100%;">
+    <div *ngFor="let item of dataProductMain; let i = index">
+      <button mat-raised-button class="btnCustomForm1 mr-t10" (click)="showHidden(i)">
+        <i class="fad fa-tags"></i>
+        <span>{{item.name}}</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="general">
+    <div *ngFor="let productMainItem of dataProductMain; let i = index">
+      <div *ngIf="isHiddenArr[i]">
+        <div class="content-title leftFlex">
+          <i class="fad fa-tags"></i>
+          <span>{{productMainItem.name}}</span>
+        </div>
+
+        <div class="toolbox">
+          <div class="toolbox__child">
+            <div class="displayPage">
+              <mat-form-field appearance="outline">
+                <mat-label>Hiển thị</mat-label>
+                <mat-select [(ngModel)]="chooseItemOfPage">
+                  <mat-option *ngFor="let num of itemOfPageArr" [value]="num">
+                    {{num}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="search">
+              <mat-form-field appearance="outline">
+                <mat-label>Tìm kiếm (không cần gõ dấu)</mat-label>
+                <label>
+                  <input  matInput [(ngModel)]="keySearch" (ngModelChange)="keySearch=$event">
+                </label>
+                <button   (click)="searchKeyword(this.keySearch, i)" matSuffix mat-icon-button color="primary">
+                  <mat-icon>search</mat-icon>
+                </button>
+              </mat-form-field>
+
+            </div>
+            <button (click)=" sortStar(i)" class="sortStar" mat-raised-button><i class="fal fa-sort-alt"></i><span>Sắp xếp theo </span><i class="fas fa-stars"></i></button>
+            <button (click)="sortABC(i)" class="sortABC" mat-raised-button><i class="fal fa-sort-alpha-down"></i><span>Sắp xếp theo ABC</span></button>
+            <button (click)="sortDiscount(i)" class="sortDiscount" mat-raised-button><i class="fad fa-tags"></i><span>Sắp xếp giảm giá</span></button>
+            <button (click)="showAll(i)" class="showAll" mat-raised-button><i class="fad fa-globe-americas"></i><span>Hiển thị tất cả</span></button>
+          </div>
+        </div>
+
+        <div>
+          <table class="data_table">
+            <tr>
+              <th class="text-center">STT</th>
+              <th class="text-center">Tên sản phẩm</th>
+              <th class="text-center">Phân loại</th>
+              <th class="text-center">Giá thành</th>
+              <th class="text-center">Số sao</th>
+              <th class="text-center">Giảm giá</th>
+              <th class="text-center">Ảnh sản phẩm</th>
+              <th class="text-center">Tác vụ</th>
+            </tr>
+            <tr *ngFor="let data of this.dataSearchKeyword[i] | paginate: {itemsPerPage: this.chooseItemOfPage, currentPage: page} let j = index">
+              <td class="text-center bold" scope="col">{{j}}</td>
+              <td class="text-center text-primary bold" scope="col"><p>{{data.productDetails.name}}</p></td>
+              <td class="text-center text-primary bold" scope="col"><p>{{data.productMainBrand}}</p></td>
+              <td class="text-center text-warning bold" scope="col"><p>{{data.price}}</p></td>
+              <td class="text-center text-warning bold" scope="col"><p>{{data.star}}</p></td>
+              <td class="text-center text-warning bold" scope="col"><p>{{data.discount}}%</p></td>
+              <td class="imgArr" scope="col">
+                <img *ngFor="let item of data.img" style="width: 50px;height: 50px" [src]="item.link"
+                     alt="{{item.name}}">
+              </td>
+              <td style="">
+                <button class="btn btn-outline-warning btnIconSinger" (click)="updateCustomer(data, '/productDetails/')" >
+                  <i class="fad fa-edit"></i>
+                </button>
+                <button class="btn btn-outline-danger btnIconSinger" (click)="returnCheckNotication(data); openNotication()">
+                  <i class="fad fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </table>
+
+          <pagination-controls previousLabel="Trang trước" nextLabel="Trang sau" class="text-center" (pageChange)="page = $event"></pagination-controls>
+<!--          {{this.dataTypeProductDetails[i]|json}}-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div [hidden]="isCheckNotication" class="fix-content">
+  <div class="box-question">
+    <p class="text-notication"><i style="color: var(--danger);font-size: 160%;margin-right:7px;" class="fad fa-exclamation-triangle"></i>Bạn có chắc chắn muốn xóa sản phẩm này không ?</p>
+    <div class="btnMulti">
+      <button (click)="closeNotication(); deleteDataCustomer(this.temp)" mat-stroked-button color="warn"><i class="fal fa-check"></i><span>Có</span></button>
+      <button (click)="closeNotication()" mat-stroked-button color="primary"><i class="fal fa-times"></i><span>Không</span></button>
+    </div>
+
+  </div>
+</div>

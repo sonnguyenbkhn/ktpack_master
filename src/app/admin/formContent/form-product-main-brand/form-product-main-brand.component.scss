@@ -1,0 +1,50 @@
+@import "../../../admin/custom.scss";
+
+.content-form {
+  font-family: hevatica-regular, sans-serif;
+
+  .btnForm {
+    margin-right: 10px;
+
+    i {
+    }
+  }
+
+  .content-itemArr {
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .content-formSelect {
+    display: flex; margin: 10px 0;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    select {
+      width: 300px;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .content-formArr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label {
+      span {
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,41 @@
+<!--{{dataPatchValue|json}}-->
+<div class="container">
+  <table>
+    <tr>
+      <th>Tên</th>
+      <th>Giá trị</th>
+    </tr>
+    <tr>
+      <td><img src="{{dataPatchValue.img[0].link}}" alt=""></td>
+      <td> <p>{{dataPatchValue.productDetails.name}}</p></td>
+    </tr>
+    <tr>
+      <td>Tên người mua</td>
+      <td>{{dataPatchValue.infoCustomer.fullName}}</td>
+    </tr>
+    <tr>
+      <td>Số điện thoại</td>
+      <td>{{dataPatchValue.infoCustomer.phoneNumber}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{dataPatchValue.infoCustomer.yourEmail}}</td>
+    </tr>
+    <tr>
+      <td>Địa chỉ</td>
+      <td>{{dataPatchValue.infoCustomer.addressTinh}}/{{dataPatchValue.infoCustomer.addressHuyen}}/{{dataPatchValue.infoCustomer.addressXa}}/{{dataPatchValue.infoCustomer.addressDetails}}</td>
+    </tr>
+    <tr>
+      <td>Mã đơn hàng</td>
+      <td>{{dataPatchValue1}}</td>
+    </tr>
+    <tr>
+      <td>Thời gian</td>
+      <td>{{dataPatchValue.timeCart}}</td>
+    </tr>
+
+  </table>
+
+
+
+</div>

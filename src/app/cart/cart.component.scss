@@ -1,0 +1,185 @@
+@import "responsive.scss";
+.content-trangchu{
+  width: 100%;
+  padding-left: 2vw;
+  background-color: var(--bg-gray);
+  height: 50px;
+  display: flex;justify-content: flex-start;
+  align-items: center;
+
+  a{
+    color: var(--primary-color);
+  }
+}
+.content-cart{
+  background-color: var(--bg-gray);
+  width: 100%;
+  .content-cart__main{
+    background-color: white;
+    padding-top: 30px;
+    margin: 0 2vw;border-radius: 10px;
+    width: calc(100%  - 4vw);
+    .page-view{
+      margin: 2vw 3vw 3vw 3vw;
+
+      h1{
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        text-align: center;font-size: 22px;
+      }
+      .alert-notification{
+        height: 50px;padding-left: 20px;
+        background-color: rgba(96, 163, 188, 0.7);
+        display: flex;justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 105%;border-radius: 5px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        font-family: hevatica-regular,sans-serif;
+        i{
+          font-size: 120%;
+          margin-right: 10px;
+        }
+      }
+      .content-table{
+        margin-bottom: 20px;
+        font-size: 14px;
+        justify-content: center;
+        display: flex;
+        table{
+          border-collapse: collapse;  width: 100%;
+          border: 1px solid rgba(128, 128, 128, 0.6);
+          cursor: pointer;border-radius: 5px!important;
+          thead{
+            border: 1px solid rgba(128, 128, 128, 0.6);
+            color: black;
+          }
+          tr{
+            border: 1px solid rgba(128, 128, 128, 0.6);
+            td{
+              border: 1px solid rgba(128, 128, 128, 0.6);
+              padding: 8px 8px;text-align: center;
+            }
+            td:nth-child(1){
+              width: 20px;
+            }
+            td:nth-child(2){
+              width: 150px;
+              img{
+                width: 50px;height: 50px;
+              }
+            }
+            td:nth-child(3){
+              width: 250px;
+            }
+            td:nth-child(4){
+              width: 200px;
+            }
+            td:nth-child(5){
+              width: 100px;
+            }
+            td:nth-child(6){
+              width: 150px;
+              .count{
+                button{
+                  border: none;
+                }
+                span{
+                  padding: 3px 10px;
+                }
+              }
+            }
+            td:nth-child(7){
+              width: 150px;
+            }
+            td:nth-child(8){
+              width: 100px;
+            }
+          }
+        }
+      }
+
+      .btn-router{
+        width: 100%;
+        display: flex;justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--bg-gray);
+        padding-bottom: 20px;
+      }
+    }
+
+    .form-info{
+      margin: 2vw 3vw 3vw 3vw;
+      h1{
+        text-transform: uppercase;
+        margin-bottom: 0px!important;
+        color: var(--primary-color);
+        text-align: center;font-size: 20px;
+      }
+      .form-info__main{
+        width: calc(100%);
+        ::ng-deep mat-dialog-content{
+          width: 90%;
+          margin-left: 5% !important;
+          padding: 0!important;
+
+          .formInfoSale{
+            ::ng-deep mat-form-field:nth-child(1){
+              width: 100%;
+            }
+            ::ng-deep mat-form-field:nth-child(2){
+              width: calc(95%/2);
+              margin-right: 5%;
+            }
+            ::ng-deep mat-form-field:nth-child(3){
+              width: calc(95%/2);
+            }
+            ::ng-deep mat-form-field:nth-child(4){
+              width: calc(95%/2);
+              margin-right: 5%;
+            }
+            ::ng-deep mat-form-field:nth-child(5){
+              width: calc(95%/2);
+            }
+            ::ng-deep mat-form-field:nth-child(6){
+              width: calc(95%/2);
+              margin-right: 5%;
+            }
+            ::ng-deep mat-form-field:nth-child(7){
+              width: calc(95%/2);
+            }
+            ::ng-deep mat-form-field:nth-child(8){
+              width: calc(100%);
+            }
+
+
+          }
+        }
+        ::ng-deep mat-dialog-actions{
+          ::ng-deep .mat-focus-indicator.selled.mat-button.mat-button-base.mat-button-disabled{
+            background-color: white!important;
+            border-radius: 5px;
+          }
+          ::ng-deep .mat-focus-indicator.selled.mat-button.mat-button-base{
+            background-color: var(--primary1-color) !important;
+          }
+        }
+      }
+    }
+  }
+}
+::ng-deep .mat-form-field {
+  .mat-input-element {
+    color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  .mat-form-field-underline {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+  .mat-form-field-ripple {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+  .mat-form-field-required-marker {
+    color: rgba(0, 0, 0, 0.85) !important;
+  }
+}

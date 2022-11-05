@@ -1,0 +1,147 @@
+<div class="content-form">
+  <button class="btn btn-outline-warning" (click)="clearAll()">clear all</button>
+  <form action="" [formGroup]="formDataTintucDetails">
+
+    <div class="select-group">
+      <div class="select">
+        <p>Chọn link sản phẩm chính</p>
+        <select formControlName="tintucMain" class="form-select form-select-lg mb-3"
+                aria-label="Default select example">
+          <option [ngValue]="item.link" *ngFor="let item of dataTintucMain">{{item.link}}</option>
+        </select>
+      </div>
+      <div class="tintucDetails" formGroupName="tintucDetails">
+        <div class="content-formArr1">
+          <div class="form-group">
+              <p>Tên tiêu đề chi tiết: </p>
+              <input   style="font-size: 14px; width: 325px;" class="form-control input-lg" type="text" formControlName="name">
+          </div>
+          <div class="form-group">
+            <p>Link tiêu đề chi tiết: </p>
+            <input  style="font-size: 14px;width: 325px;" class="form-control" type="text" formControlName="link">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div >
+      <span class="text-warning">** Ảnh chính</span>
+      <angular-editor formControlName="imgMain" [config]="config"></angular-editor>
+
+      <span class="text-warning">** Nội dung tin tức</span>
+      <angular-editor formControlName="contentTintuc" [config]="config"></angular-editor>
+
+      <p class="text-warning">** Ngày đăng</p>
+      <input type="date" formControlName="dateTintuc">
+
+    </div>
+
+    <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 10px; background-color: rgba(245,245,245,0.3);">
+      <div class="leftFlex contentTag">
+        <i class="fad fa-tags"></i><p>Thẻ meta tag</p>
+      </div>
+      <button class="btn btn-primary btnEx" (click)="showHidden('meta')">
+        <i class="fad fa-caret-circle-down"></i>
+        <span>Hiển thị thêm</span>
+      </button>
+      <button class="btn btn-danger btnEx" (click)="hideHidden('meta')">
+        <i class="fad fa-caret-circle-up"></i>
+        <span>Ẩn nội dung</span>
+      </button>
+      <div class="metaTag-group" *ngIf="isHiddenMeta">
+
+        <div class="productMetaNameArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaName()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm name meta</span>
+          </button>
+          <div formArrayName="productMetaName" *ngFor="let item of getProductMetaName().controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="content-formArr">
+
+                <label> <span>Meta name: </span>
+                  <input type="text" formControlName="name" placeholder="name">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaName(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete name</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productMetaGoogleArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaGoogle()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm google meta</span>
+          </button>
+          <div formArrayName="productMetaGoogle" *ngFor="let item of getProductMetaGoogle().controls; let i = index">
+            <div [formGroupName]="i">
+
+              <div class="content-formArr">
+                <label> <span>Meta itemprop: </span>
+                  <input type="text" formControlName="itemprop" placeholder="itemprop">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaGoogle(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete itemprop</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productMetaPropertyArr">
+          <button class="btn btn-success btnExMeta" (click)="addDataProductDetailsMetaProperty()">
+            <i class="fal fa-plus-square"></i>
+            <span>Thêm property meta</span>
+          </button>
+          <div formArrayName="productMetaProperty"
+               *ngFor="let item of getProductMetaProperty().controls; let i = index">
+            <div [formGroupName]="i">
+              <div class="content-formArr">
+
+                <label> <span>Meta property: </span>
+                  <input type="text" formControlName="property" placeholder="property">
+                </label>
+                <label><span>Meta content: </span>
+                  <input type="text" formControlName="content" placeholder="content">
+                </label>
+                <button class="btn btn-danger btnEx" (click)="deleteDataProductDetailsMetaProperty(i)">
+                  <i class="fal fa-trash-alt"></i>
+                  <span>Xóa mete property</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </form>
+
+  <button class="btnCustomForm2 mr-t10" mat-raised-button  [disabled]="formDataTintucDetails.invalid" (click)=" onSubmit(); "
+          *ngIf="!isEdit">
+    <i class="fad fa-paper-plane"></i>
+    <span>submit</span>
+  </button>
+  <button class="btnCustomForm2 mr-t10" mat-raised-button (click)=" saveRowData();" *ngIf="isEdit">
+    <i class="fad fa-save"></i>
+    <span>Save</span>
+  </button>
+
+</div>

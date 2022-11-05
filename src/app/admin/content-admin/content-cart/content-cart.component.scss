@@ -1,0 +1,111 @@
+.container1 {
+  padding: 5px;
+
+  .content {
+    .title {
+      color: var(--primary-color);
+      height: 50px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      i {
+        font-size: 120%;
+        margin: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .toolbox{
+      display: flex;justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;margin-top: 10px;
+      .toolbox__child{
+        display: flex;justify-content: flex-start;
+        align-items: center;
+        ::ng-deep mat-form-field{
+          margin-right: 10px;
+        }
+        .sortABC, .sortStar, .showAll, .sortDiscount{
+          font-family: hevatica-regular, sans-serif;
+          font-weight: 100;  font-size: 85%;
+          background-image: linear-gradient(to bottom, #2b5876, #4e4376);
+          margin-right: 10px;
+          i{
+            margin-right: 5px;color: whitesmoke;
+          }
+          span{
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+    ::ng-deep pagination-controls{
+      ul{
+        padding-top:10px;
+        padding-bottom: 20px;
+      }
+      li{
+        margin: 0 5px;
+      }
+      .ngx-pagination .disabled{
+        padding: 5px 10px;
+        background-color: var(--primary-color);
+        border-radius: 20px;
+      }
+      .pagination-next.ng-star-inserted{
+
+      }
+      .ngx-pagination .current{
+        padding: 5px 12px;
+        border-radius: 20px;
+      }
+      .ngx-pagination a{
+        padding: 5px 12px;
+        border-radius: 20px;
+      }
+    }
+    ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+    ::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+    .data_table{
+      border-collapse: collapse;
+      border:1px solid var(--bg-gray);
+      width: 100%;border-radius: 5px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: white;  overflow: hidden;
+      tr{
+        td, th{
+          padding: 5px;
+          border:1px solid var(--bg-gray);
+          text-align: center;cursor: pointer;
+        }
+        td:first-child, th:first-child{
+          width: 200px;
+        }
+        td:nth-child(2), th:nth-child(2){
+          width: 100px;
+        }
+        td:nth-child(3), th:nth-child(3){
+          width: 200px;
+        }
+        td:nth-child(4), th:nth-child(4){
+          width: 100px;
+        }
+        td:last-child, th:last-child{
+          width: 100px;
+        }
+        td.imgArr{
+          img{
+            margin: 0 5px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+        }
+
+      }
+    }
+  }
+
+}

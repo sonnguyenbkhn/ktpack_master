@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+  --width-logo: 200px;
+  --main-color1:  #3c6382;
+  --bgc-main-color1: #3c6382;
+  --main-color2: #284358;
+  --main-color3: #284358;
+  --bg-gray: #f5f5f5;
+  --text-color-black: #333;
+  --text-color-white: rgba(255, 255, 255, 0.8);
+  --primary-color: #3c6382;
+  --primary1-color: #60a3bc;
+  --black-color: #2d3436;
+  --primary-linear: linear-gradient(to bottom,var(--primary-color), var(--primary1-color));
+  --bg-img_header: url('/src/assets/Storage/Upload/banner/background_header.png');
+}
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Ubuntu:wght@300&display=swap');
+//font-family: 'Quicksand', sans-serif;
+//font-family: 'Indie Flower', cursive;
+//font-family: 'Ubuntu', sans-serif;
+//font-family: 'Pacifico', cursive;
+//font-family: 'Nanum Myeongjo', serif;
+
+
+
+html, body { height: 100%;font-size: 62.5%;position: relative}
+body { margin: 0; font-family: hevatica-regular, sans-serif;}
+// facebook
+.pm0{
+  padding: 0!important;
+  margin: 0!important;
+}
+.text-warning{
+  font-family: hevatica-regular, sans-serif;
+  color: var(--bs-danger) !important;
+  font-size: 12px;
+}
+.text-primary{
+  font-family: hevatica-regular, sans-serif;
+  color: var(--primary-color) !important;
+  font-size: 12px;
+}
+.text-center{
+  text-align: center;
+}
+.bold{
+  font-weight: bold;
+}
+.fb_dialog_content iframe{
+  bottom: 95px!important;
+}
+#facebook svg{
+  width: 50px!important;
+  height: 50px!important;
+  svg{
+    width: 60px!important;
+    height: 60px!important;
+  }
+}
+
+.indexBlack{
+  position: absolute;content: "";
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5000px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+ul,li{
+  margin:0;padding:0;
+}
+.centerFlex{
+  display: flex;justify-content: center;
+  align-items: center;
+}
+.rightFlex{
+  display: flex;justify-content: flex-end;
+  align-items: center;
+}
+.leftFlex{
+  display: flex;justify-content: flex-start;
+  align-items: center;
+}
+.mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+.btnCustomForm{
+  font-family: hevatica-regular, sans-serif;
+  font-weight: 100;  font-size: 85%;
+  background-image: linear-gradient(to bottom, #2b5876, #4e4376);
+  margin-right: 10px;
+  i{
+    margin-right: 5px;color: whitesmoke;
+  }
+  span{
+    color: whitesmoke;
+  }
+}
+.btnCustomForm1{
+  font-family: hevatica-regular, sans-serif;
+  font-weight: 100;  font-size: 85%;
+  background-image: linear-gradient(to bottom, #fccb16, #f19a15);
+  margin-right: 10px;
+  i{
+    margin-right: 5px;color: whitesmoke;
+  }
+  span{
+    color: white;
+  }
+}
+.btnCustomForm2{
+  font-family: hevatica-regular, sans-serif;
+  font-weight: 100;  font-size: 85%;
+  background-image: linear-gradient(to bottom, #f96d0b , #d13e50);
+  margin-right: 10px;
+  i{
+    margin-right: 5px;color: whitesmoke;
+  }
+  span{
+    color: white;
+  }
+}
+.btnCustomForm3{
+  font-family: hevatica-regular, sans-serif;
+  font-weight: 100;  font-size: 85%;
+  background-image: linear-gradient(to bottom, #12de97 , #28c24a);
+  margin-right: 10px;
+  i{
+    margin-right: 5px;color: whitesmoke;
+  }
+  span{
+    color: white;
+  }
+}
+
+
+
+@keyframes rotageCircle {
+  0%{transform: rotate(0deg); color: var(--bs-danger)}
+  75%{transform: rotate(60deg); color: var(--primary-color)}
+  100%{transform: rotate(0deg); color: var(--bs-danger)}
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

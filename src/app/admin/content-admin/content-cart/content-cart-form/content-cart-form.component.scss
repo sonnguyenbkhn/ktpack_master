@@ -1,0 +1,21 @@
+table{
+  font-family: hevatica-regular, sans-serif;
+  width: 100%;border-collapse: collapse;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  tr{
+    width: 100%; border: 1px solid rgba(128, 128, 128, 0.5);
+    td, th{
+      img{
+        width: 50px;height: 50px;
+      }
+      border: 1px solid rgba(128, 128, 128, 0.5);
+      padding: 10px;
+    }
+    td:first-child{
+      width: 30%;
+    }
+    td:last-child{
+      width: 70%;
+    }
+  }
+}

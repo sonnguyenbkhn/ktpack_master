@@ -1,0 +1,231 @@
+<div NgxLoadingXBlur [show]="load">
+  <div id="nav-top-menu" class="nav-top-menu">
+    <div class="container-custom">
+      <div class="content-left">
+        <span>Danh mục sản phẩm </span>
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="content-right">
+        <ul class="list-parent">
+          <li>
+            <a href="" routerLink="/trang-chu">Trang chủ</a>
+          </li>
+          <li>
+            <a href="" routerLink="/gioi-thieu">Giới thiệu</a>
+          </li>
+          <li class="list-parent-for" *ngFor="let item of dataMainList; let i = index">
+            <a routerLink="/{{item.link}}">{{item.name}}</a><i style="margin-left: 5px; color: white; font-size: 120%;"
+                                                               class="fas fa-caret-down"></i>
+            <ul style="display: none" class="list-child-for">
+              <li *ngFor="let item1 of dataHeader[i]">
+                <a routerLink="/{{item.link}}/{{item1.link}}">{{item1.name}}</a>
+              </li>
+            </ul>
+          </li>
+<!--          <li>-->
+<!--            <a href="" routerLink="/tin-tuc">Tin tức</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="" routerLink="/lien-he">Liên hệ</a>-->
+<!--          </li>-->
+        </ul>
+      </div>
+    </div>
+    <div style="display: none" class="container-custom-mobile">
+
+      <mat-accordion multi="true" #accordion="matAccordion" class="accordion-body">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="header-mother">
+            <mat-panel-title class="mat-panel-title">
+              <mat-icon>list</mat-icon>
+              <b>DANH MỤC</b></mat-panel-title>
+            <mat-panel-description></mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-accordion class="mat-table" *ngFor="let item of dataMainList; let i = index">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header class="header-child">
+                <mat-panel-title><a rel="canonical" href="" (click)="accordion.closeAll()" routerLink="/{{item.link}}"
+                                    routerLinkActive="$router_link-active$">
+                  <img style="margin-right: 5px;" width="25" height="25" src="{{item.icon}}" alt="{{item.icon}}"
+                       title="{{item.icon}}">
+                  {{item.name}}
+                </a></mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                <mat-list-item *ngFor="let item1 of dataHeader[i]">
+                  <i style="margin-left: 20px; font-size: 90%;" class="fad fa-tags"></i>
+                  <a rel="canonical" (click)="accordion.closeAll();" href="" routerLink="/productType/{{item1.link}}"
+                     routerLinkActive="$router_link-active$">{{item1.name}}</a>
+                </mat-list-item>
+              </mat-nav-list>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    </div>
+  </div>
+  <div class="nav-top-content">
+    <div class="container-custom__one">
+      <div class="box-list">
+        <ul>
+          <li class="list-parent-for" *ngFor="let item of dataMainList; let i = index">
+            <a routerLink="/{{item.link}}">
+              <img src="{{item.icon}}" alt="{{item.icon}}" title="{{item.icon}}">
+              {{item.name}}
+            </a><i style="margin-left: 5px; color: #666666; font-size: 120%;" class="fas fa-caret-right"></i>
+            <ul style="display: none" class="list-child">
+              <li *ngFor="let item1 of dataHeader[i]">
+                <i class="fad fa-circle"></i>
+                <a routerLink="/{{item.link}}/{{item1.link}}">{{item1.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="slide-img">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let slide of dataImgTrangchuLeft">
+            <ng-template class="slide" carouselSlide>
+              <a href="{{slide.linkRouting}}">
+                <img [src]="slide.link" [alt]="slide.name" [title]="slide.name">
+              </a>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <div class="list-img">
+        <div class="img-content" *ngFor="let item of dataImgTrangchuRight">
+          <a href="{{item.linkRouting}}">
+            <img src="{{item.link}}" alt="{{item.name}}" title="{{item.name}}">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-bar">
+    <div class="tool-bar__content">
+      <ul>
+        <li>
+          <i class="fa fa-headphones"></i>
+          <p>Tư vấn 24/7</p>
+        </li>
+        <li>
+          <i class="fa fa-gift"></i>
+          <p>Khuyến mại hấp dẫn</p>
+        </li>
+        <li>
+          <i class="fa fa-truck"></i>
+          <p>Giao hàng toàn quốc</p>
+        </li>
+        <li>
+          <i class="fa fa-shield"></i>
+          <p>Sản phẩm chất lượng</p>
+        </li>
+        <li>
+          <i class="fa fa-refresh"></i>
+          <p>Miễn phí đổi trả</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-product-main">
+    <div class="content-product-item" *ngFor="let itemMain of dataTypeProductDetails; let i = index">
+      <div class="content-product-item__title">
+        <div class="title-left">
+          <h2><a href="" title="{{dataMainList[i].name}}"
+                 routerLink="/{{dataMainList[i].link}}">{{dataMainList[i].name}}</a></h2>
+        </div>
+        <div class="title-right">
+          <a href="" routerLink="/{{dataMainList[i].link}}">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="content-product-item__list">
+        <div class="list_total_product" *ngIf="itemMain">
+          <ul>
+            <li   *ngFor="let item of itemMain |
+          paginate: {id: i.toString() ,itemsPerPage: this.chooseItemOfPage, currentPage: arrFirstPage[i]} let j = index" routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}">
+              <div  class="form-cell">
+                <div (click)="scrollTop(); loadingTest()"  routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}" class="custom-img"
+                     routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}">
+                  <img class="img-main" src="{{item.img[0].link}}" alt="{{item.img[0].name}}"
+                       title="{{item.img[0].name}}">
+                  <div class="img-like">
+                    <div class="img-like1"><span>Yêu thích</span></div>
+                    <div class="img-like2"></div>
+                  </div>
+                  <div class="img-discount">
+                    <p class="valueDiscount">{{item.discount}}%</p>
+                    <p class="textDiscount">giảm</p>
+                  </div>
+                </div>
+                <div (click)="scrollTop(); loadingTest()"  routerLink="/{{item.productMain}}/{{item.productMainBrand}}/{{item.productDetails.link}}" class="contentTotal">
+                  <div class="contentProduct" title="{{item.productDetails.name}}">
+                    <h3>{{item.productDetails.name}}</h3></div>
+                  <div class="priceProduct">
+                    <div>
+                      <span>Giá: </span><span>{{item.price}}</span>
+                    </div>
+                    <div>
+                      <svg height="12" viewBox="0 0 20 12" width="20" class="shopee-svg-icon icon-free-shipping">
+                        <g fill="none" fill-rule="evenodd" transform="">
+                          <rect fill="#00bfa5" fill-rule="evenodd" height="9" rx="1" width="12" x="4"/>
+                          <rect height="8" rx="1" stroke="#00bfa5" width="11" x="4.5" y=".5"/>
+                          <rect fill="#00bfa5" fill-rule="evenodd" height="7" rx="1" width="7" x="13" y="2"/>
+                          <rect height="6" rx="1" stroke="#00bfa5" width="6" x="13.5" y="2.5"/>
+                          <circle cx="8" cy="10" fill="#00bfa5" r="2"/>
+                          <circle cx="15" cy="10" fill="#00bfa5" r="2"/>
+                          <path
+                            d="m6.7082481 6.7999878h-.7082481v-4.2275391h2.8488017v.5976563h-2.1405536v1.2978515h1.9603297v.5800782h-1.9603297zm2.6762505 0v-3.1904297h.6544972v.4892578h.0505892c.0980164-.3134765.4774351-.5419922.9264138-.5419922.0980165 0 .2276512.0087891.3003731.0263672v.6210938c-.053751-.0175782-.2624312-.038086-.3762568-.038086-.5122152 0-.8758247.3017578-.8758247.75v1.8837891zm3.608988-2.7158203c-.5027297 0-.8536919.328125-.8916338.8261719h1.7390022c-.0158092-.5009766-.3446386-.8261719-.8473684-.8261719zm.8442065 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187zm2.6224996-1.8544922c-.5027297 0-.853692.328125-.8916339.8261719h1.7390022c-.0158091-.5009766-.3446386-.8261719-.8473683-.8261719zm.8442064 1.8544922h.6544972c-.1549293.571289-.7050863.9228515-1.49238.9228515-.9864885 0-1.5903965-.6269531-1.5903965-1.6464843 0-1.0195313.6165553-1.6669922 1.5872347-1.6669922.9580321 0 1.5366455.6064453 1.5366455 1.6083984v.2197266h-2.4314412v.0351562c.0221328.5595703.373095.9140625.9169284.9140625.4110369 0 .6924391-.1376953.8189119-.3867187z"
+                            fill="#fff"/>
+                          <path d="m .5 8.5h3.5v1h-3.5z" fill="#00bfa5"/>
+                          <path d="m0 10.15674h3.5v1h-3.5z" fill="#00bfa5"/>
+                          <circle cx="8" cy="10" fill="#047565" r="1"/>
+                          <circle cx="15" cy="10" fill="#047565" r="1"/>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="starProduct">
+                    <div class="btn-checkHeart" (click)="item.like = !item.like">
+                      <div [(ngModel)]="item.like" *ngIf="item.like; then one else two"></div>
+                      <ng-template #one><i style="color: orangered" class="fas fa-heart"></i></ng-template>
+                      <ng-template #two><i style="color: grey" class="far fa-heart"></i></ng-template>
+                    </div>
+                    <div class="class-one">
+                      <ng-template #t1 let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                          <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+                      </ng-template>
+
+                      <ngb-rating [(rate)]="item.star" [starTemplate]="t1" [readonly]="true" [max]="5"></ngb-rating>
+                      <!--                    <ngb-rating [rate]="1" [starTemplate]="t" [max]="5" [readonly]="true"-->
+                      <!--                                [resettable]="true"></ngb-rating>-->
+                      <span>Đã bán {{item.sellNumber}}k</span>
+                    </div>
+                  </div>
+                  <div class="addressProduct">Địa chỉ: {{item.address}}</div>
+
+                </div>
+              </div>
+            </li>
+          </ul>
+          <pagination-controls id="{{i.toString()}}" previousLabel="Trang trước" nextLabel="Trang sau"
+                               class="text-center" (pageChange)="arrFirstPage[i] = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-main></app-footer-main>
+</div>
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
